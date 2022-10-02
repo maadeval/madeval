@@ -1,0 +1,53 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang='es'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='generator' content={Astro.generator} />
+    <title>
+      Madeval | Desarrollo web JavaScript y React | Frontend Developer
+    </title>
+  </head>
+  <body>
+    <slot />
+    <style is:global>
+      :root {
+        --color-slate-50: #f8fafc;
+        --color-slate-200: #e2e8f0;
+        --screen-lg: 1536px;
+        --color-text: #111827;
+        --color-teal-700: #0f766e;
+        --color-github: #28a745;
+        --color-github-20: rgba(40, 167, 69, 0.2);
+        --color-linkedin: #0077b5;
+        --color-linkedin-20: rgba(0, 119, 181, 0.2);
+        --color-twitter: #1d9bf0;
+        --color-twitter-20: rgba(29, 155, 240, 0.2);
+      }
+
+      html {
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+          'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+          'Noto Color Emoji';
+        background-color: var(--color-slate-50);
+      }
+
+      body {
+        margin: 0;
+        color: var(--color-text);
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+    </style>
+  </body>
+</html>
