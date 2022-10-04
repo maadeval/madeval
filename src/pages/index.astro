@@ -4,56 +4,96 @@ import Layout from '../layouts/Layout.astro'
 
 <Layout>
   <header>
-    <div class='banner'></div>
     <div class='header'>
-      <figure class='logo-wrapper'>
-        <img class='logo-image' src='/logo.svg' alt='Logo de Madeval' />
-        <h2 class='logo-title'>madeval</h2>
-      </figure>
-      <nav class='navbar'>
-        <a class='navbar-option' href='#'>Sobre mi</a>
-        <a class='navbar-option' href='#'>Valores</a>
-        <a class='navbar-option' href='#'>Experiencia</a>
-        <a class='navbar-option' href='#'>Blog</a>
-        <a class='navbar-option' href='#'>Proyectos</a>
-      </nav>
-      <label class='theme-wrapper'>
-        Activar modo oscuro
-        <input type='checkbox' class='theme-button' />
-      </label>
+      <div class='banner'></div>
+      <div class='sub-header'>
+        <figure class='logo-wrapper'>
+          <img class='logo-image' src='/logo.svg' alt='Logo de Madeval' />
+          <h2 class='logo-title'>madeval</h2>
+        </figure>
+        <nav class='navbar'>
+          <a class='navbar-option' href='#'>Sobre mi</a>
+          <a class='navbar-option' href='#'>Valores</a>
+          <a class='navbar-option' href='#'>Experiencia</a>
+          <a class='navbar-option' href='#'>Blog</a>
+          <a class='navbar-option' href='#'>Proyectos</a>
+        </nav>
+        <label class='theme-wrapper'>
+          Activar modo oscuro
+          <input type='checkbox' class='theme-button' />
+        </label>
+      </div>
     </div>
   </header>
   <main class='main'>
-    <section class='avatar-wrapper'>
-      <div class='dialog-wrapper'>
-        <p class='dialog-message'>Holaa! 👋</p>
-        <p class='dialog-message'>Hoy usamos React o Angular? 🤫</p>
+    <section class='main-landing'>
+      <div class='avatar-wrapper'>
+        <div class='dialog-wrapper'>
+          <p class='dialog-message'>Wenasss 👋</p>
+          <p class='dialog-message'>Hoy usamos React o Angular? 🤫</p>
+        </div>
+        <img class='avatar-image' src='/avatar.png' alt='Avatar de Madeval' />
       </div>
-      <img src='/avatar.png' alt='Avatar de Madeval' />
-    </section>
-    <section>
-      <h3 class='subtitle'>Frontend Developer</h3>
-      <h2 class='title'>
-        Ayudar a equipos a ser mejores en lo tecnico y en lo social. Avanzar en
-        comunidad.
-      </h2>
-      <div class='social-media'>
-        <p class='social-text'>Mis redes sociales 👇</p>
-        <div class='social-link-wrapper'>
-          <a class='social-link github' href='#'>
-            <img src='/github-icon.svg' alt='github icon' />
-            GitHub
-          </a>
-          <a class='social-link linkedin' href='#'>
-            <img src='/linkedin-icon.svg' alt='linkedin icon' />
-            LinkedIn
-          </a>
-          <a class='social-link twitter' href='#'>
-            <img src='/twitter-icon.svg' alt='twitter icon' />
-            Twitter
-          </a>
+      <div>
+        <h3 class='subtitle'>Frontend Developer</h3>
+        <h2 class='title opacity'>
+          Avanzar en comunidad y ayudar a equipos a ser mejores en lo tecnico y
+          humano.
+        </h2>
+        <div class='social-media'>
+          <p class='social-text'>Mis redes sociales 👇</p>
+          <div class='social-link-wrapper'>
+            <a
+              class='social-link github'
+              href='https://github.com/maadeval'
+              target='_blank'
+            >
+              <img
+                class='social-image'
+                src='/github-icon.svg'
+                alt='github icon'
+              />
+              GitHub
+            </a>
+            <a
+              class='social-link linkedin'
+              href='https://www.linkedin.com/in/maadeval'
+              target='_blank'
+            >
+              <img
+                class='social-image'
+                src='/linkedin-icon.svg'
+                alt='linkedin icon'
+              />
+              LinkedIn
+            </a>
+            <a
+              class='social-link twitter'
+              href='https://twitter.com/maadeval'
+              target='_blank'
+            >
+              <img
+                class='social-image'
+                src='/twitter-icon.svg'
+                alt='twitter icon'
+              />
+              Twitter
+            </a>
+          </div>
         </div>
       </div>
+    </section>
+    <section class='about-me'>
+      <h3 class='title'>Hola! Soy <br /> Mateo Álvarez, y...</h3>
+      <p class='big-text opacity'>
+        cuando no estoy desarrollando me encanta comer y ver peliculas de
+        terror!
+        <br />Soy del team menta granizada 🍦 y me encanta la música lofi 🎵
+      </p>
+      <p class='big-text-variant'>
+        Disfruto caminar por la rambla, escuchar playlist's y los nuevos podcast
+        de @nomedalavidadev. Son geniales!
+      </p>
     </section>
   </main>
 </Layout>
@@ -65,6 +105,15 @@ import Layout from '../layouts/Layout.astro'
     background-image: url('/logo-to-banner.svg');
   }
   .header {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: var(--color-slate-50);
+    z-index: 1;
+  }
+
+  .sub-header {
     display: grid;
     grid-template-columns: 20% 1fr 20%;
     justify-content: space-between;
@@ -72,7 +121,7 @@ import Layout from '../layouts/Layout.astro'
     max-width: var(--screen-lg);
     margin-left: auto;
     margin-right: auto;
-    padding: 1rem;
+    padding: 1rem 4rem;
   }
 
   .logo-wrapper {
@@ -158,17 +207,29 @@ import Layout from '../layouts/Layout.astro'
   }
 
   .main {
-    max-width: var(--screen-lg);
+    min-height: 100vh;
+  }
+
+  .main-landing {
     display: flex;
-    gap: 6.25rem;
-    margin-top: 10rem;
+    max-width: var(--screen-lg);
     margin-left: auto;
     margin-right: auto;
+    gap: 6.25rem;
+    height: 100vh;
+    align-items: center;
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
 
   .avatar-wrapper {
     display: inline-flex;
     flex-direction: column;
+  }
+
+  .avatar-image {
+    width: 403px;
+    height: 402px;
   }
 
   .dialog-wrapper {
@@ -192,15 +253,33 @@ import Layout from '../layouts/Layout.astro'
   .title {
     font-size: 3rem;
     line-height: 3.25rem;
-    opacity: 0.6;
     font-weight: 400;
     max-width: 28ch;
+  }
+
+  .opacity {
+    opacity: 0.6;
   }
 
   .subtitle {
     font-size: 1.5rem;
     line-height: 2rem;
     font-weight: 400;
+  }
+
+  .big-text {
+    margin-top: 2.5rem;
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    max-width: 38ch;
+  }
+
+  .big-text-variant {
+    margin-top: 2rem;
+    font-size: 2rem;
+    line-height: 2.25rem;
+    max-width: 40ch;
+    opacity: 0.8;
   }
 
   .social-media {
@@ -270,5 +349,20 @@ import Layout from '../layouts/Layout.astro'
   .twitter:focus {
     box-shadow: 0 0 0 0.125rem var(--color-slate-50),
       0 0 0 0.25rem var(--color-twitter-20);
+  }
+
+  .about-me {
+    border-top: 1px solid var(--color-slate-200);
+    margin-left: auto;
+    margin-right: auto;
+    max-width: var(--screen-lg);
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-top: 4rem;
+  }
+
+  .social-image {
+    width: 1.063rem;
+    height: 1.063rem;
   }
 </style>
