@@ -1,0 +1,12 @@
+---
+import Dropdown from "../Dropdown";
+import style from "./Header.module.css";
+---
+
+<header class={style.wrapper}>
+  <div class={style.header}>
+    <Dropdown client:load />
+    <img class={style.logo} src="./logo.svg" alt="Logo de Madeval" />
+    <button class={style.theme}>Tema</button>
+  </div>
+</header>

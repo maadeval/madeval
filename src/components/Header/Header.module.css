@@ -1,0 +1,39 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  padding: 1rem 1.5rem;
+  background-color: var(--color-transparent);
+  backdrop-filter: blur(4px);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--screen-lg);
+  width: 100%;
+}
+
+.logo {
+  width: 2rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.theme {
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.125rem;
+  gap: 1rem;
+}

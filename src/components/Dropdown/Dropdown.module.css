@@ -1,0 +1,92 @@
+.wrapper {
+  position: relative;
+}
+
+.button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.125rem;
+  gap: 1rem;
+}
+
+.icon {
+  height: 1rem;
+}
+
+.dropdown {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 0.25rem);
+  background-color: var(--color-white);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow-sm);
+  width: 220px;
+  height: max-content;
+  animation: show 0.2s ease-in-out forwards;
+}
+
+.hide {
+  animation: hide 0.2s ease-in-out forwards;
+}
+
+@keyframes show {
+  0% {
+    transform: translateY(0.25rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes hide {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0.25rem);
+    opacity: 0;
+  }
+}
+
+.open {
+}
+
+.option {
+  padding: 0.5rem 1rem;
+  color: var(--color-slate-500);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.option:hover {
+  background-color: var(--color-slate-100);
+  color: var(--color-slate-700);
+}
+
+.selected {
+  color: var(--color-slate-700);
+  position: relative;
+}
+
+.selected:before {
+  content: "";
+  position: absolute;
+  left: 0rem;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 100%;
+  width: 0.125rem;
+  background-color: var(--color-black);
+}
