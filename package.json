@@ -8,11 +8,37 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "format": "prettier --write .",
+    "prepare": "husky install",
+    "postinstall": "npm run prepare"
   },
   "dependencies": {
     "@astrojs/preact": "1.1.1",
     "astro": "^1.4.2",
     "preact": "10.11.2"
+  },
+  "imports": {
+    "~components/*": "./src/components/*",
+    "~lib/*": "./src/lib/*",
+    "~layouts/*": "./src/layouts/*"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "5.42.0",
+    "@typescript-eslint/parser": "5.42.0",
+    "eslint": "8.27.0",
+    "eslint-config-standard-with-typescript": "23.0.0",
+    "eslint-plugin-astro": "0.21.0",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-n": "15.5.0",
+    "eslint-plugin-promise": "6.1.1",
+    "husky": "8.0.1",
+    "lint-staged": "13.0.3",
+    "prettier": "2.7.1",
+    "prettier-plugin-astro": "0.7.0",
+    "typescript": "4.8.4"
+  },
+  "lint-staged": {
+    "*.{js,astro,jsx,tsx}": "npm run format"
   }
 }

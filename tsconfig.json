@@ -1,3 +1,13 @@
 {
-  "extends": "astro/tsconfigs/base"
+  "extends": "astro/tsconfigs/base",
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "module": "Node16",
+    "baseUrl": "./",
+    "paths": {
+      "~components/*": ["./src/components/*"],
+      "~lib/*": ["./src/lib/*"],
+      "~layouts/*": ["./src/layouts/*"]
+    }
+  }
 }

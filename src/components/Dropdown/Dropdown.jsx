@@ -1,16 +1,16 @@
-import { useEffect, useRef, useState } from "preact/hooks";
-import { SECTION_OPTIONS } from "../../lib/section-options";
-import style from "./Dropdown.module.css";
+import { useEffect, useRef, useState } from 'preact/hooks'
+import { SECTION_OPTIONS } from '~lib/section-options'
+import style from './Dropdown.module.css'
 
 const Dropdown = () => {
-  const [selectedOption, setSelectedOption] = useState(SECTION_OPTIONS[0]);
+  const [selectedOption, setSelectedOption] = useState(SECTION_OPTIONS[0])
   const {
     dropdownOpened,
     dropdownRef,
     openDropdown,
     closeDropdown,
     hideProgress,
-  } = useDropdown();
+  } = useDropdown()
 
   return (
     <div className={style.wrapper}>
@@ -20,13 +20,13 @@ const Dropdown = () => {
       {dropdownOpened && (
         <ul
           ref={dropdownRef}
-          className={`${style.dropdown} ${hideProgress ? style.hide : ""}`}
+          className={`${style.dropdown} ${hideProgress ? style.hide : ''}`}
           onClick={closeDropdown}
         >
           {SECTION_OPTIONS.map((option) => (
             <li
               className={`${style.option} ${
-                option.label === selectedOption.label ? style.selected : ""
+                option.label === selectedOption.label ? style.selected : ''
               }`}
               key={option.label}
               onClick={() => setSelectedOption(option)}
@@ -42,43 +42,43 @@ const Dropdown = () => {
         </ul>
       )}
     </div>
-  );
-};
+  )
+}
 
 const useDropdown = (hideTiming = 200) => {
-  const [dropdownOpened, setDropdownOpened] = useState(false);
-  const [hideProgress, setHideProgress] = useState(false);
-  const dropdownRef = useRef(null);
+  const [dropdownOpened, setDropdownOpened] = useState(false)
+  const [hideProgress, setHideProgress] = useState(false)
+  const dropdownRef = useRef(null)
 
-  const openDropdown = () => setDropdownOpened(true);
-  const closeDropdown = () => setHideProgress(true);
+  const openDropdown = () => setDropdownOpened(true)
+  const closeDropdown = () => setHideProgress(true)
 
   useEffect(() => {
-    if (!hideProgress) return;
+    if (!hideProgress) return
 
     const timeoutId = setTimeout(() => {
-      setDropdownOpened(false);
-      setHideProgress(false);
-    }, hideTiming);
+      setDropdownOpened(false)
+      setHideProgress(false)
+    }, hideTiming)
 
     return () => {
-      clearTimeout(timeoutId);
-    };
-  }, [hideProgress, hideTiming]);
+      clearTimeout(timeoutId)
+    }
+  }, [hideProgress, hideTiming])
 
   useEffect(() => {
-    if (!dropdownOpened) return;
+    if (!dropdownOpened) return
 
     const clickOutside = (evt) => {
-      const clickInside = dropdownRef.current.contains(evt.target);
+      const clickInside = dropdownRef.current.contains(evt.target)
 
-      if (!clickInside) closeDropdown();
-    };
+      if (!clickInside) closeDropdown()
+    }
 
-    document.addEventListener("click", clickOutside);
+    document.addEventListener('click', clickOutside)
 
-    return () => document.removeEventListener("click", clickOutside);
-  }, [dropdownOpened]);
+    return () => document.removeEventListener('click', clickOutside)
+  }, [dropdownOpened])
 
   return {
     dropdownOpened,
@@ -86,7 +86,7 @@ const useDropdown = (hideTiming = 200) => {
     openDropdown,
     closeDropdown,
     hideProgress,
-  };
-};
+  }
+}
 
-export default Dropdown;
+export default Dropdown
