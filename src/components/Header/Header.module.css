@@ -8,7 +8,7 @@
 
   padding: 1rem 1.5rem;
   background-color: var(--color-transparent);
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(16px);
 }
 
 .header {
