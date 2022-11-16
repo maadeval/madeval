@@ -51,6 +51,82 @@ import Layout from '~layouts/Layout.astro'
           <tool-tip role="tooltip">Agregar contenido aqui</tool-tip>
         </span>
       </p>
+      <div class="brand-effects-wrapper">
+        <div class="brand-effects">
+          <img src="midu.svg" />
+          <img src="discord.svg" />
+          <img src="twitter.svg" />
+          <img src="midu.svg" />
+          <img src="discord.svg" />
+          <img src="twitter.svg" />
+          <img src="midu.svg" />
+          <img src="discord.svg" />
+          <img src="twitter.svg" />
+          <img src="midu.svg" />
+          <img src="discord.svg" />
+          <img src="twitter.svg" />
+          <img src="midu.svg" />
+          <img src="discord.svg" />
+          <img src="twitter.svg" />
+          <img src="midu.svg" />
+          <img src="discord.svg" />
+          <img src="twitter.svg" />
+          <img src="midu.svg" />
+          <img src="discord.svg" />
+          <img src="twitter.svg" />
+          <img src="midu.svg" />
+          <img src="discord.svg" />
+          <img src="twitter.svg" />
+          <img src="midu.svg" />
+          <img src="discord.svg" />
+          <img src="twitter.svg" />
+          <img src="midu.svg" />
+          <img src="discord.svg" />
+          <img src="twitter.svg" />
+          <img src="midu.svg" />
+          <img src="discord.svg" />
+          <img src="twitter.svg" />
+          <img src="midu.svg" />
+          <img src="discord.svg" />
+          <img src="twitter.svg" />
+          <img src="midu.svg" />
+          <img src="discord.svg" />
+          <img src="twitter.svg" />
+          <img src="midu.svg" />
+          <img src="discord.svg" />
+          <img src="twitter.svg" />
+          <img src="midu.svg" />
+          <img src="discord.svg" />
+          <img src="twitter.svg" />
+          <img src="midu.svg" />
+          <img src="discord.svg" />
+          <img src="twitter.svg" />
+          <img src="midu.svg" />
+          <img src="discord.svg" />
+          <img src="twitter.svg" />
+          <img src="midu.svg" />
+          <img src="discord.svg" />
+          <img src="twitter.svg" />
+          <img src="midu.svg" />
+          <img src="discord.svg" />
+          <img src="twitter.svg" />
+          <img src="midu.svg" />
+          <img src="discord.svg" />
+          <img src="twitter.svg" />
+          <img src="midu.svg" />
+          <img src="discord.svg" />
+          <img src="twitter.svg" />
+          <img src="midu.svg" />
+          <img src="discord.svg" />
+          <img src="twitter.svg" />
+          <img src="midu.svg" />
+          <img src="discord.svg" />
+          <img src="twitter.svg" />
+          <img src="midu.svg" />
+          <img src="discord.svg" />
+          <img src="twitter.svg" />
+        </div>
+      </div>
       <span class="bg-rgb"></span>
     </article>
   </section>
@@ -148,6 +224,7 @@ import Layout from '~layouts/Layout.astro'
       background-color: #fafafa;
       /* background-color: #0f0f12; */
       /* color: #fafafa; */
+      position: relative;
     }
 
     .description-2 {
@@ -171,6 +248,60 @@ import Layout from '~layouts/Layout.astro'
       );
       z-index: -1;
       filter: blur(32px);
+    }
+
+    .brand-effects-wrapper {
+      position: absolute;
+      top: 0;
+      right: 0;
+      overflow: hidden;
+      width: 30%;
+      height: 100%;
+    }
+
+    .brand-effects-wrapper::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(
+        35deg,
+        #fa0,
+        #fd66cb 21%,
+        #9f6eff 50%,
+        #0af 75%,
+        #0fa
+      );
+      filter: blur(32px);
+      opacity: 0.5;
+    }
+
+    .brand-effects {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      transform: translate(41px, -14px) rotate(2deg);
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 120%;
+      height: 100%;
+    }
+
+    .brand-effects img {
+      opacity: 0.1;
+      width: 48px;
+      height: 48px;
+      filter: grayscale(1);
+      transition: opacity 0.2s ease-in-out 1s, filter 0.2s ease-in-out 1s;
+    }
+
+    .brand-effects img:hover {
+      opacity: 0.4;
+      filter: grayscale(0.2);
+      transition: opacity 0.2s ease-in-out 0s, filter 0.2s ease-in-out 0s;
     }
 
     .borderline {
