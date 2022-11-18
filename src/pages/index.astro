@@ -45,12 +45,18 @@ import Layout from '~layouts/Layout.astro'
       </div>
     </article>
     <article class="about-me">
-      <p class="description-2">
-        Desarrollo hace más de dos años y <span class="borderline"
-          >formo parte de una comunidad de desarrollo increíble!
-          <tool-tip role="tooltip">Agregar contenido aqui</tool-tip>
-        </span>
-      </p>
+      <div>
+        <p class="description-2">
+          Desarrollo hace más de dos años y <span class="borderline"
+            >formo parte de una comunidad de desarrollo increíble!
+            <tool-tip role="tooltip">Agregar contenido aqui</tool-tip>
+          </span>
+        </p>
+        <p class="description-3">
+          Lo más importante se hace en comunidad. Ser parte de un grupo de
+          grandes personas y desarrolladores me motivado a ser mejor!
+        </p>
+      </div>
       <div class="brand-effects-wrapper">
         <div class="brand-effects">
           <img src="midu.svg" />
@@ -128,6 +134,19 @@ import Layout from '~layouts/Layout.astro'
         </div>
       </div>
       <span class="bg-rgb"></span>
+    </article>
+    <article class="ikigai-dev-wrapper">
+      <div>
+        <p class="description-2">Qué es ser desarrollador</p>
+        <p class="description-3 ikigai-dev-description">
+          No es programar. Buscamos soluciones a problemas, inquietudes y
+          necesidades. Creamos productos, experiencias, sensaciones, y todo eso
+          lo hacemos a partir de una herramienta que es el código. Programar
+          solo es el medio para lograr lo más importante. Somos artistas que por
+          medio de nuestra herramienta transmitimos nuestras ideas a soluciones
+          en el mundo real.
+        </p>
+      </div>
     </article>
   </section>
 
@@ -217,7 +236,7 @@ import Layout from '~layouts/Layout.astro'
 
     .about-me {
       margin-top: 20rem;
-      margin-bottom: 20rem;
+      margin-bottom: 16rem;
       padding: 6rem 2rem;
       position: relative;
       /* box-shadow: 0 0 3rem 0.5rem #0d1b2d20; */
@@ -230,6 +249,14 @@ import Layout from '~layouts/Layout.astro'
     .description-2 {
       font-size: 2rem;
       max-width: 40ch;
+    }
+
+    .description-3 {
+      max-width: 60ch;
+      position: relative;
+      top: 2rem;
+      font-size: 1.25rem;
+      color: gray;
     }
 
     .bg-rgb {
@@ -331,6 +358,37 @@ import Layout from '~layouts/Layout.astro'
       user-select: none;
       opacity: 0;
       transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+    }
+
+    .ikigai-dev-wrapper {
+      margin-bottom: 6rem;
+      padding: 6rem 2rem;
+      position: relative;
+      color: #fafafa;
+    }
+
+    .ikigai-dev-wrapper::after {
+      content: '';
+      z-index: -1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      box-shadow: 0 0 3rem 0.5rem #0d1b2d20;
+      background-image: linear-gradient(
+        35deg,
+        #0d1b2d,
+        #000 21%,
+        #0d1b2d 50%,
+        #000 75%,
+        #0d1b2d
+      );
+    }
+
+    .ikigai-dev-description {
+      color: #94a3b8;
+      line-height: 1.25;
     }
   </style>
 </Layout>
