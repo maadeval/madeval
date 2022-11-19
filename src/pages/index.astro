@@ -147,6 +147,12 @@ import Layout from '~layouts/Layout.astro'
           en el mundo real.
         </p>
       </div>
+      <img class="tech-image html-image" src="html.svg" />
+      <img class="tech-image css-image" src="css.svg" />
+      <img class="tech-image javascript-image" src="javascript.svg" />
+      <img class="tech-image typescript-image" src="typescript.svg" />
+      <img class="tech-image react-image" src="react.svg" />
+      <img class="tech-image next-image" src="nextjs.svg" />
     </article>
   </section>
 
@@ -365,6 +371,7 @@ import Layout from '~layouts/Layout.astro'
       padding: 6rem 2rem;
       position: relative;
       color: #fafafa;
+      display: flex;
     }
 
     .ikigai-dev-wrapper::after {
@@ -389,6 +396,67 @@ import Layout from '~layouts/Layout.astro'
     .ikigai-dev-description {
       color: #94a3b8;
       line-height: 1.25;
+    }
+
+    .tech-image {
+      background-image: linear-gradient(
+        35deg,
+        #0d1b2d,
+        #000 21%,
+        #0d1b2d 50%,
+        #000 75%,
+        #0d1b2d
+      );
+      width: 80px;
+      height: 80px;
+
+      border-radius: 0.5rem;
+      padding: 0.5rem;
+      position: absolute;
+      top: 0;
+      right: 0;
+      filter: grayscale(0.8);
+      opacity: 0.8;
+      box-shadow: -0.125rem 0.125rem 0rem 0.125rem #0d1b2d90;
+      transform: rotateZ(-15deg) rotateX(15deg) rotateY(15deg) scale(1);
+      transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+    }
+
+    .tech-image:hover {
+      filter: grayscale(0.2);
+      opacity: 1;
+      box-shadow: -0.125rem 0.125rem 0rem 0.125rem #0d1b2d;
+      transform: rotateZ(-15deg) rotateX(15deg) rotateY(15deg) scale(1.1);
+    }
+
+    .html-image {
+      top: -0.25rem;
+      right: -1rem;
+    }
+
+    .css-image {
+      top: -0.5rem;
+      right: 6rem;
+    }
+
+    .javascript-image {
+      top: 6rem;
+      right: 3rem;
+    }
+
+    .react-image {
+      top: 10rem;
+      right: -3rem;
+    }
+
+    .next-image {
+      top: 14rem;
+      right: 6rem;
+    }
+
+    .typescript-image {
+      top: 18rem;
+      right: -1rem;
     }
   </style>
 </Layout>
