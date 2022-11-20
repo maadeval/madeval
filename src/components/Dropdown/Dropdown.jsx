@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from 'preact/hooks'
+import { useState } from 'preact/hooks'
+import { useDropdown } from '~hooks/useDropdown'
 import { SECTION_OPTIONS } from '~lib/section-options'
 import style from './Dropdown.module.css'
 
@@ -43,50 +44,6 @@ const Dropdown = () => {
       )}
     </div>
   )
-}
-
-const useDropdown = (hideTiming = 200) => {
-  const [dropdownOpened, setDropdownOpened] = useState(false)
-  const [hideProgress, setHideProgress] = useState(false)
-  const dropdownRef = useRef(null)
-
-  const openDropdown = () => setDropdownOpened(true)
-  const closeDropdown = () => setHideProgress(true)
-
-  useEffect(() => {
-    if (!hideProgress) return
-
-    const timeoutId = setTimeout(() => {
-      setDropdownOpened(false)
-      setHideProgress(false)
-    }, hideTiming)
-
-    return () => {
-      clearTimeout(timeoutId)
-    }
-  }, [hideProgress, hideTiming])
-
-  useEffect(() => {
-    if (!dropdownOpened) return
-
-    const clickOutside = (evt) => {
-      const clickInside = dropdownRef.current.contains(evt.target)
-
-      if (!clickInside) closeDropdown()
-    }
-
-    document.addEventListener('click', clickOutside)
-
-    return () => document.removeEventListener('click', clickOutside)
-  }, [dropdownOpened])
-
-  return {
-    dropdownOpened,
-    dropdownRef,
-    openDropdown,
-    closeDropdown,
-    hideProgress,
-  }
 }
 
 export default Dropdown

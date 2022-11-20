@@ -21,7 +21,8 @@
   "imports": {
     "~components/*": "./src/components/*",
     "~lib/*": "./src/lib/*",
-    "~layouts/*": "./src/layouts/*"
+    "~layouts/*": "./src/layouts/*",
+    "~hooks/*": "./src/lib/hooks/*"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "5.42.0",
