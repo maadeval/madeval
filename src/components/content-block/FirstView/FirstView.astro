@@ -47,7 +47,8 @@
   .intro {
     display: flex;
     align-items: center;
-    gap: 8rem;
+    flex-direction: column;
+    gap: 1rem;
   }
 
   .intro-description {
@@ -60,7 +61,7 @@
   }
 
   .description {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
   .social-contact-box {
@@ -68,6 +69,7 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+    flex-direction: column;
   }
 
   .contact-link {
@@ -103,5 +105,23 @@
   .github {
     background: linear-gradient(90deg, #333 0%, #000 100%);
     --shadow: #00000020;
+  }
+
+  @media (min-width: 480px) {
+    .description {
+      font-size: 3rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .intro {
+      flex-direction: row;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .intro {
+      gap: 8rem;
+    }
   }
 </style>

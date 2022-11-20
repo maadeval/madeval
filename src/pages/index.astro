@@ -29,7 +29,7 @@ import Layout from '~layouts/Layout.astro'
   .text-md {
     max-width: 60ch;
     position: relative;
-    top: 2rem;
+    margin-top: 2rem;
     font-size: 1.25rem;
     color: gray;
   }
@@ -47,5 +47,14 @@ import Layout from '~layouts/Layout.astro'
 
   .main {
     padding-top: 12rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (min-width: 1440px) {
+    .main {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 </style>

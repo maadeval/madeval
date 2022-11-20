@@ -1,6 +1,6 @@
 <article class="comunity-box">
-  <div>
-    <p class="text-lg">
+  <div class="left-content">
+    <p class="text-heading">
       Desarrollo hace más de dos años y <span class="borderline"
         >formo parte de una comunidad de desarrollo increíble!
         <tool-tip role="tooltip">Agregar contenido aqui</tool-tip>
@@ -93,9 +93,14 @@
   .comunity-box {
     margin-top: 20rem;
     margin-bottom: 16rem;
-    padding: 6rem 2rem;
-    position: relative;
     background-color: #fafafa;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .left-content {
+    padding: 4rem 2rem;
     position: relative;
   }
 
@@ -111,12 +116,10 @@
   }
 
   .brand-effect-wrapper {
-    position: absolute;
-    top: 0;
-    right: 0;
+    position: relative;
     overflow: hidden;
-    width: 30%;
-    height: 100%;
+    width: 100%;
+    height: 3rem;
   }
 
   .brand-effect-wrapper::before {
@@ -198,5 +201,46 @@
     opacity: 0.4;
     filter: grayscale(0.2);
     transition: opacity 0.2s ease-in-out 0s, filter 0.2s ease-in-out 0s;
+  }
+
+  .text-heading {
+    font-size: 1.5rem;
+    max-width: 100%;
+  }
+
+  .text {
+    max-width: 100%;
+    position: relative;
+    margin-top: 2rem;
+    font-size: 1.25rem;
+    color: gray;
+  }
+
+  @media (min-width: 480px) {
+    .text-heading {
+      font-size: 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .comunity-box {
+      grid-template-columns: 1fr 30%;
+    }
+
+    .brand-effect-wrapper {
+      height: 100%;
+    }
+
+    .text-heading {
+      max-width: 40ch;
+    }
+
+    .text {
+      max-width: 60ch;
+    }
+
+    .left-content {
+      padding: 6rem 2rem;
+    }
   }
 </style>

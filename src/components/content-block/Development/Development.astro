@@ -1,6 +1,6 @@
 <article class="development-box">
   <div>
-    <p class="text-lg">Qué es ser desarrollador</p>
+    <p class="text-heading">Qué es ser desarrollador</p>
     <p class="text-md description-text">
       No es programar. Buscamos soluciones a problemas, inquietudes y
       necesidades. Creamos productos, experiencias, sensaciones, y todo eso lo
@@ -10,20 +10,23 @@
       real.
     </p>
   </div>
-  <img class="tech-image html-image" src="html.svg" />
-  <img class="tech-image css-image" src="css.svg" />
-  <img class="tech-image javascript-image" src="javascript.svg" />
-  <img class="tech-image typescript-image" src="typescript.svg" />
-  <img class="tech-image react-image" src="react.svg" />
-  <img class="tech-image next-image" src="nextjs.svg" />
+  <div class="images-wrapper">
+    <img class="tech-image html-image" src="html.svg" />
+    <img class="tech-image css-image" src="css.svg" />
+    <img class="tech-image javascript-image" src="javascript.svg" />
+    <img class="tech-image typescript-image" src="typescript.svg" />
+    <img class="tech-image react-image" src="react.svg" />
+    <img class="tech-image next-image" src="nextjs.svg" />
+  </div>
 </article>
 <style>
   .development-box {
     margin-bottom: 6rem;
-    padding: 6rem 2rem;
+    padding: 4rem 2rem;
     position: relative;
     color: #fafafa;
     display: flex;
+    flex-direction: column;
   }
 
   .development-box::after {
@@ -82,32 +85,130 @@
   }
 
   .html-image {
-    top: -0.25rem;
-    right: -1rem;
+    top: 3rem;
+    position: relative;
   }
 
   .css-image {
-    top: -0.5rem;
-    right: 6rem;
+    top: 9rem;
+    position: relative;
   }
 
   .javascript-image {
-    top: 6rem;
-    right: 3rem;
+    top: 3rem;
+    position: relative;
   }
 
   .react-image {
-    top: 10rem;
-    right: -3rem;
+    top: 8rem;
+    position: relative;
   }
 
   .next-image {
-    top: 14rem;
-    right: 6rem;
+    top: 3rem;
+    position: relative;
   }
 
   .typescript-image {
-    top: 18rem;
-    right: -1rem;
+    top: 5rem;
+    position: relative;
+  }
+
+  .images-wrapper {
+    height: 6rem;
+    position: relative;
+    display: none;
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .text-heading {
+    font-size: 1.5rem;
+    max-width: 40ch;
+  }
+
+  @media (min-width: 480px) {
+    .text-heading {
+      font-size: 2rem;
+      max-width: 40ch;
+    }
+  }
+
+  @media (min-width: 640px) {
+    .images-wrapper {
+      display: grid;
+    }
+  }
+  @media (min-width: 1024px) {
+    .images-wrapper {
+      height: 0rem;
+      position: initial;
+      display: block;
+    }
+
+    .development-box {
+      padding: 6rem 2rem;
+    }
+
+    .html-image {
+      position: absolute;
+      top: -0.25rem;
+      right: 1rem;
+    }
+
+    .css-image {
+      position: absolute;
+      top: -0.5rem;
+      right: 9rem;
+    }
+
+    .javascript-image {
+      position: absolute;
+      top: 6rem;
+      right: 8rem;
+    }
+
+    .react-image {
+      position: absolute;
+      top: 10rem;
+      right: 1rem;
+    }
+
+    .next-image {
+      position: absolute;
+      top: 14rem;
+      right: 8rem;
+    }
+
+    .typescript-image {
+      position: absolute;
+      top: 18rem;
+      right: 1rem;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .html-image {
+      right: -1rem;
+    }
+
+    .css-image {
+      right: 6rem;
+    }
+
+    .javascript-image {
+      right: 3rem;
+    }
+
+    .react-image {
+      right: -3rem;
+    }
+
+    .next-image {
+      right: 6rem;
+    }
+
+    .typescript-image {
+      right: -1rem;
+    }
   }
 </style>

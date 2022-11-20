@@ -129,8 +129,8 @@
   .career-sub-block {
     padding-top: 2rem;
     padding-bottom: 2rem;
-    padding-left: 6rem;
-    margin-left: 4rem;
+    padding-left: 1rem;
+    margin-left: 0rem;
     position: relative;
   }
 
@@ -198,10 +198,35 @@
   }
 
   .date {
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 600;
     color: #94a3b8;
-    padding-right: 0.5rem;
-    border-right: 1px solid #0d1b2d20;
+    border-right: 1px solid transparent;
+    border-left: 1px solid #0d1b2d20;
+    display: none;
+  }
+
+  @media (min-width: 640px) {
+    .career-block,
+    .career-sub-block {
+      padding-left: 2rem;
+      margin-left: 1rem;
+    }
+
+    .date {
+      display: block;
+      padding-right: 0.5rem;
+      font-size: 1.5rem;
+      border-left: 1px solid transparent;
+      border-right: 1px solid #0d1b2d20;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .career-block,
+    .career-sub-block {
+      padding-left: 6rem;
+      margin-left: 4rem;
+    }
   }
 </style>
