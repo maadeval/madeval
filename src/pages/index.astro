@@ -154,6 +154,81 @@ import Layout from '~layouts/Layout.astro'
       <img class="tech-image react-image" src="react.svg" />
       <img class="tech-image next-image" src="nextjs.svg" />
     </article>
+    <article class="carear-wrapper">
+      <h3 class="description-2">Mi experiencia como profesional</h3>
+      <div class="carear-block">
+        <span class="carear-company">Devsys</span>
+        <h4 class="carear-job">Frontend Developer | UX/UI</h4>
+        <ul class="carear-sib-block-wrapper">
+          <li class="carear-sub-block">
+            <p class="carear-sub-block-title">
+              Diseñar el nuevo producto de la empresa. Generar su UI Kit,
+              componentes y el flow de cada vista.
+            </p>
+            <p class="carear-sub-block-description">
+              Esto mejoró la comunicación y capacidad de plasmar puntos de vista
+              entre diversos equipos, frontend, backend y expertos de negocio.
+              Dió una guía visual de hacia donde ir, como enfocar la estructura
+              del producto y promovió un flujo de trabajo en donde diseño y
+              desarrollo pudieran tener un punto en común. La comunicación entre
+              equipos es fundamental y la retroalimentacion de conocimeintos
+              tambien, por lo que siento que es el punto mas destacable de esta
+              etapa.
+            </p>
+          </li>
+          <li class="carear-sub-block">
+            <p class="carear-sub-block-title">
+              Crear una librería de componentes interna que respete el nuevo
+              branding. Desde el desarrollo, testeo y documentación.
+            </p>
+            <p class="carear-sub-block-description">
+              Tener una librería de componentes es fundamental para una empresa
+              de prodcuto. Sugerir y desarrollar esta idea fue un gran paso para
+              agilizar el desarrollo de nuevos productos y mantener un branding
+              consistente. Los retos mas destacados fueron generar un bundle
+              optimo para la web, elegir correctamente las tecnologias con las
+              que se iba a contruir y tomar decisiones sobre su estructura.
+              Descubrí mi pasion por crear herramientas de desarrollo que
+              mejoren la experiencia de los desarrolladores y agilicen procesos.
+            </p>
+          </li>
+          <li class="carear-sub-block">
+            <p class="carear-sub-block-title">
+              Crear un nuevo producto a nivel de Frontend
+            </p>
+            <p class="carear-sub-block-description">
+              En este proyecto tuve la oportunidad de trabajar aplicando los
+              desarrollos previos de la libreria de componentes y seguir los
+              flows de diseño. El reto mas desafiante fue definir una
+              arquitectura lo suficientemente entendible y escalable para el
+              equipo y para el producto. Creo que en Frontend una arquitectura
+              ideal es aquella que sigue los principios de screaming
+              architecture, y su desarrollo es un proceso continuo que se adapta
+              a las necesidades del producto y que requiere de muchas
+              iteraciones.
+            </p>
+          </li>
+          <li class="carear-sub-block">
+            <p class="carear-sub-block-title">
+              Liderar capacitaciones tecnicas
+            </p>
+            <p class="carear-sub-block-description">
+              Lo que más me entusiasma como profesional de desarrollo es poder
+              compartir mis experiencias y mis conocimientos con otros devs. Ser
+              esa ayuda y esa guía que yo tuve cuando empecé a programar. En
+              esta etapa tuve la oportunidad de liderar capacitaciones tecnicas
+              para el equipo de desarrollo, y me permitió mejorar mis
+              habilidades de comunicación, de enseñanza, y me dio la oportunidad
+              de re aprender muchas cosas y aprender de ellos. Como profesional
+              y sobre todo y mucho mas importante, como persona.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </article>
+    <article class="without-programming-wrapper">
+      <h3 class="description-2">Me gusta leer, pasear y el helado!</h3>
+    </article>
   </section>
 
   <style>
@@ -457,6 +532,60 @@ import Layout from '~layouts/Layout.astro'
     .typescript-image {
       top: 18rem;
       right: -1rem;
+    }
+
+    .carear-wrapper,
+    .without-programming-wrapper {
+      margin-bottom: 6rem;
+      padding: 6rem 0rem;
+    }
+
+    .carear-block,
+    .carear-sub-block {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+      padding-left: 6rem;
+      margin-left: 4rem;
+      position: relative;
+    }
+
+    .carear-sub-block {
+      border-left: 1px solid #0d1b2d20;
+    }
+
+    .carear-sub-block:first-child {
+      padding-top: 0;
+    }
+
+    .carear-sub-block:last-child {
+      padding-bottom: 0;
+    }
+
+    .carear-sib-block-wrapper {
+      max-width: 800px;
+    }
+
+    .carear-sub-block-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #94a3b8;
+      margin-bottom: 0.5rem;
+    }
+
+    .carear-company {
+      font-size: 0.875rem;
+    }
+
+    .carear-job {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #94a3b8;
+      margin-bottom: 2rem;
+    }
+
+    .carear-sub-block-description {
+      font-size: 1.125rem;
+      line-height: 1.75rem;
     }
   </style>
 </Layout>
