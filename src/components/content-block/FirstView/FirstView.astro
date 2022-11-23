@@ -1,5 +1,9 @@
 <article class="intro">
-  <img class="picture" src="avatar.png" />
+  <img
+    class="picture"
+    src="avatar.png"
+    alt="Retrato de Mateo Álvarez | Madeval"
+  />
   <div class="intro-description">
     <h3 class="technologies">
       Frontend Developer - JavaScript - React - Next.js - HTML & CSS
@@ -13,7 +17,11 @@
         href="https://github.com/maadeval"
         target="_blank"
       >
-        <img src="github-icon.svg" />
+        <img
+          class="social-media-image"
+          src="github-icon.svg"
+          alt="Logo de Github"
+        />
         GitHub
       </a>
       <a
@@ -21,7 +29,11 @@
         href="https://twitter.com/maadeval"
         target="_blank"
       >
-        <img src="twitter-icon.svg" />
+        <img
+          class="social-media-image"
+          src="twitter-icon.svg"
+          alt="Logo de Twitter"
+        />
         Twitter
       </a>
       <a
@@ -29,7 +41,11 @@
         href="https://www.linkedin.com/in/maadeval/"
         target="_blank"
       >
-        <img src="linkedin-icon.svg" />
+        <img
+          class="social-media-image"
+          src="linkedin-icon.svg"
+          alt="Logo de LinkedIn"
+        />
         LinkedIn
       </a>
     </article>
@@ -42,6 +58,8 @@
     border-radius: 50%;
     filter: drop-shadow(-0.5rem -0.5rem 0 #0f0f12);
     z-index: -1;
+    width: 100%;
+    aspect-ratio: 1;
   }
 
   .intro {
@@ -56,7 +74,7 @@
   }
 
   .technologies {
-    color: gray;
+    color: #64748b;
     margin-bottom: 1rem;
   }
 
@@ -104,6 +122,11 @@
   .github {
     background: linear-gradient(90deg, #333 0%, #000 100%);
     --shadow: #00000020;
+  }
+
+  .social-media-image {
+    width: 1rem;
+    height: 1rem;
   }
 
   @media (min-width: 480px) {
