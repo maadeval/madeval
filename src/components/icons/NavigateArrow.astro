@@ -1,6 +1,9 @@
 ---
 import { HTMLAttributes } from 'astro/types'
-const props = Astro.props as HTMLAttributes<'svg'>
+
+type Props = HTMLAttributes<'svg'>
+
+const props = Astro.props
 ---
 
 <svg

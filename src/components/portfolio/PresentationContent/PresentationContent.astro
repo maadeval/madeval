@@ -1,6 +1,26 @@
 ---
 import NavigateArrow from '~components/icons/NavigateArrow.astro'
 import style from './PresentationContent.module.css'
+import Divider from '~components/Divider/Divider.astro'
+import Button from '~components/Button/Button.astro'
+
+const SOCIAL_MEDIA = [
+  {
+    name: 'Linkedin',
+    url: 'https://www.linkedin.com/in/maadeval/',
+    icon: 'linkedin_icon.svg',
+  },
+  {
+    name: 'Twitter',
+    url: 'https://twitter.com/maadeval',
+    icon: 'twitter_icon.svg',
+  },
+  {
+    name: 'GitHub',
+    url: 'https://github.com/maadeval',
+    icon: 'github_icon.svg',
+  },
+]
 ---
 
 <section class={style.container}>
@@ -18,51 +38,24 @@ import style from './PresentationContent.module.css'
     👇 Aquí estaré subiendo contenido de programación.
   </p>
   <div class={style.socialMediaContainer}>
-    <a
-      href="https://www.linkedin.com/in/maadeval/"
-      target="_blank"
-      class={style.socialMedia}
-    >
-      <img
-        width={24}
-        height={24}
-        src="linkedin_icon.svg"
-        alt="Logo de Linkedin"
-      />
-      Linkedin
-      <NavigateArrow height={12} />
-    </a>
-    <a
-      href="https://twitter.com/maadeval"
-      target="_blank"
-      class={style.socialMedia}
-    >
-      <img
-        width={24}
-        height={24}
-        src="twitter_icon.svg"
-        alt="Logo de Twitter"
-      />
-      Twitter
-      <NavigateArrow height={12} />
-    </a>
-    <a
-      href="https://github.com/maadeval"
-      target="_blank"
-      class={style.socialMedia}
-    >
-      <img width={24} height={24} src="github_icon.svg" alt="Logo de GitHub" />
-      GitHub
-      <NavigateArrow height={12} />
-    </a>
+    {
+      SOCIAL_MEDIA.map(({ name, url, icon }) => (
+        <a href={url} target="_blank" class={style.socialMedia}>
+          <img width={24} height={24} src={icon} alt={`Logo de ${name}`} />
+          {name}
+          <NavigateArrow height={12} />
+        </a>
+      ))
+    }
   </div>
   <div class={style.curriculumButtonContainer}>
-    <a
+    <Button
+      as="a"
       href="#"
       target="_blank"
-      class={style.button}
-      download="/Frontend_Developer_Mateo_Alvarez.pdf">Descargar Curriculum</a
+      download="/Frontend_Developer_Mateo_Alvarez.pdf"
+      >Descargar Curriculum</Button
     >
   </div>
 </article>
-<div class={style.divider}></div>
+<Divider className={style.divider} />
