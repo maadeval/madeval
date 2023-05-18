@@ -1,0 +1,45 @@
+---
+import '~styles/index.css'
+import style from './MainLayout.module.css'
+---
+
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Madeval</title>
+    <link
+      href="/fonts/inter-regular.woff2"
+      rel="preload"
+      type="font/woff2"
+      as="font"
+      fetchpriority="high"
+      crossorigin
+    />
+    <link
+      href="/fonts/inter-medium.woff2"
+      rel="preload"
+      type="font/woff2"
+      as="font"
+      fetchpriority="high"
+      crossorigin
+    />
+    <link
+      href="/fonts/inter-bold.woff2"
+      rel="preload"
+      type="font/woff2"
+      as="font"
+      fetchpriority="high"
+      crossorigin
+    />
+  </head>
+  <body class={style.container}>
+    <div class={style.background}></div>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  html {
+    background-color: #0f1e29;
+  }
+</style>

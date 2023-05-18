@@ -1,0 +1,68 @@
+---
+import NavigateArrow from '~components/icons/NavigateArrow.astro'
+import style from './PresentationContent.module.css'
+---
+
+<section class={style.container}>
+  <div class={style.avatarContainer}>
+    <img class={style.avatar} src="/madeval.webp" alt="Foto de Madeval" />
+  </div>
+  <h3 class={style.name}>Mateo Álvarez</h3>
+</section>
+<h1 class={style.position}>Senior Frontend Developer</h1>
+<p class={style.description}>
+  +3 años de experiencia desarrollando páginas web.
+</p>
+<article class={style.socialMediaContentContainer}>
+  <p class={style.socialMediaDescription}>
+    👇 Aquí estaré subiendo contenido de programación.
+  </p>
+  <div class={style.socialMediaContainer}>
+    <a
+      href="https://www.linkedin.com/in/maadeval/"
+      target="_blank"
+      class={style.socialMedia}
+    >
+      <img
+        width={24}
+        height={24}
+        src="linkedin_icon.svg"
+        alt="Logo de Linkedin"
+      />
+      Linkedin
+      <NavigateArrow height={12} />
+    </a>
+    <a
+      href="https://twitter.com/maadeval"
+      target="_blank"
+      class={style.socialMedia}
+    >
+      <img
+        width={24}
+        height={24}
+        src="twitter_icon.svg"
+        alt="Logo de Twitter"
+      />
+      Twitter
+      <NavigateArrow height={12} />
+    </a>
+    <a
+      href="https://github.com/maadeval"
+      target="_blank"
+      class={style.socialMedia}
+    >
+      <img width={24} height={24} src="github_icon.svg" alt="Logo de GitHub" />
+      GitHub
+      <NavigateArrow height={12} />
+    </a>
+  </div>
+  <div class={style.curriculumButtonContainer}>
+    <a
+      href="#"
+      target="_blank"
+      class={style.button}
+      download="/Frontend_Developer_Mateo_Alvarez.pdf">Descargar Curriculum</a
+    >
+  </div>
+</article>
+<div class={style.divider}></div>

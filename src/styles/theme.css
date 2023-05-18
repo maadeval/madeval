@@ -1,12 +1,4 @@
 :root {
-  --color-white: #fff;
-  --color-transparent: hsla(0, 0%, 100%, 0.8);
-  --color-slate-100: #fafafa;
-  --color-slate-500: #666666;
-  --color-slate-700: #333333;
-  --color-black: #000;
-  --shadow-sm: 0px 0px 8px #eaeaea;
-  --shadow-base: 0px 8px 30px 0 20px 25px -5px rgb(0 0 0 / 0.1),
-    0 8px 10px -6px rgb(0 0 0 / 0.1);
-  --screen-lg: 1280px;
+  --color-background: #222;
+  --screen-lg: 680px;
 }

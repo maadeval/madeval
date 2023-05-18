@@ -1,60 +1,8 @@
 ---
-import Career from '~components/content-block/Career/Career.astro'
-import ComingSoon from '~components/content-block/ComingSoon/ComingSoon.astro'
-import Comunity from '~components/content-block/Comunity/Comunity.astro'
-import Development from '~components/content-block/Development/Development.astro'
-import FirstView from '~components/content-block/FirstView/FirstView.astro'
-import Header from '~components/Header/Header.astro'
-import Layout from '~layouts/Layout.astro'
+import MainLayout from '~layouts/MainLayout.astro'
+import PresentationContent from '~components/portfolio/PresentationContent/PresentationContent.astro'
 ---
 
-<Layout>
-  <Header />
-  <section class="main">
-    <div class="background"></div>
-    <FirstView />
-    <Comunity />
-    <Development />
-    <Career />
-    <ComingSoon />
-  </section>
-</Layout>
-
-<style is:global>
-  .text-lg {
-    font-size: 2rem;
-    max-width: 40ch;
-  }
-
-  .text-md {
-    max-width: 60ch;
-    position: relative;
-    margin-top: 2rem;
-    font-size: 1.25rem;
-    color: #64748b;
-  }
-</style>
-<style>
-  .background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-image: linear-gradient(to top, #e6e9f0 0%, #fff 100%);
-    z-index: -1;
-  }
-
-  .main {
-    padding-top: 12rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  @media (min-width: 1440px) {
-    .main {
-      padding-left: 0;
-      padding-right: 0;
-    }
-  }
-</style>
+<MainLayout>
+  <PresentationContent />
+</MainLayout>
