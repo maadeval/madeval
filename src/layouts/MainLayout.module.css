@@ -12,16 +12,12 @@
   display: block;
   width: 100%;
   height: 100vh;
-  background: linear-gradient(45deg, #071419, #0f1e29, #7e64b6);
+  background: linear-gradient(45deg, #071419, var(--color-background), #7e64b6);
   z-index: -10;
   position: absolute;
   left: 0;
   top: 0;
   background-size: 400%;
-}
-
-.container::after {
-  content: '';
 }
 
 .background {

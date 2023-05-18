@@ -50,7 +50,7 @@
 .name {
   font-size: 1.125rem;
   color: var(--color-background);
-  background-color: #eaeaea;
+  background-color: var(--text-normal);
   padding: 0.5rem 1rem;
   border-radius: 1rem;
   position: relative;
@@ -60,7 +60,7 @@
   content: '';
   width: 0.5rem;
   aspect-ratio: 1;
-  background-color: #eaeaea;
+  background-color: var(--text-normal);
   position: absolute;
   top: 50%;
   transform: translateY(-50%) rotate(45deg);
@@ -70,7 +70,10 @@
 
 .position {
   text-align: center;
-  background: -webkit-linear-gradient(#eaeaea, #999);
+  background: -webkit-linear-gradient(
+    var(--text-normal),
+    var(--text-highlight)
+  );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -81,7 +84,7 @@
 
 .description {
   text-align: center;
-  color: #999;
+  color: var(--text-highlight);
   margin-top: 1rem;
   font-size: 1.125rem;
 }
@@ -92,7 +95,7 @@
 
 .socialMediaDescription {
   text-align: center;
-  color: #999;
+  color: var(--text-highlight);
   font-size: 1rem;
 }
 
@@ -107,7 +110,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: #999;
+  color: var(--text-highlight);
   text-decoration: none;
   font-size: 1.125rem;
   transition: color 0.2s;
@@ -119,24 +122,7 @@
 }
 
 .socialMedia:hover {
-  color: #eaeaea;
-}
-
-.divider {
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(
-    to right,
-    #999,
-    #999 50%,
-    transparent 0,
-    transparent
-  );
-  background-size: 1rem 1px;
-  -webkit-mask: linear-gradient(to right, transparent, #000, transparent);
-  mask: linear-gradient(transparent, #000 50%, transparent 0, transparent);
-  margin: 4rem 0;
-  opacity: 0.4;
+  color: var(--text-normal);
 }
 
 .curriculumButtonContainer {
@@ -145,48 +131,6 @@
   margin-top: 3rem;
 }
 
-.button {
-  position: relative;
-  padding: 0.5rem 2rem;
-  font-size: 1.125rem;
-  outline: none;
-  border-radius: 1rem;
-  border: none;
-  background-color: #0f1e29;
-  color: #999;
-  cursor: pointer;
-  box-shadow: 0 1rem 4rem -1.125rem #0f1e29;
-  text-decoration: none;
-  transition: color 0.2s, box-shadow 0.2s;
-}
-
-.button::before {
-  content: '';
-  position: absolute;
-  width: calc(100% + 2px);
-  height: calc(100% + 2px);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: linear-gradient(
-    45deg,
-    #a8a29e,
-    #78716c,
-    #57534e,
-    #44403c,
-    #d6d3d1,
-    #a8a29e
-  );
-  background-size: 400%;
-  z-index: -1;
-  border-radius: 1rem;
-}
-
-.button:hover {
-  color: #eaeaea;
-  box-shadow: 0 1rem 4rem -1.125rem #999;
-}
-
-.button:focus-visible {
-  box-shadow: 0 0 0 2px #00608d, 0 0 0 4px royalblue;
+.divider {
+  margin: 4rem 0;
 }

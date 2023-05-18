@@ -1,4 +1,6 @@
 :root {
-  --color-background: #222;
+  --color-background: #0f1e29;
+  --text-normal: #eaeaea;
+  --text-highlight: #999;
   --screen-lg: 680px;
 }
