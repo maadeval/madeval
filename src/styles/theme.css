@@ -1,6 +1,6 @@
 :root {
   --color-background: #0f1e29;
-  --text-normal: #eaeaea;
-  --text-highlight: #999;
+  --text-normal: #f8f8f8;
+  --text-highlight: #d1d1d1;
   --screen-lg: 680px;
 }
