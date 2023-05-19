@@ -1,0 +1,11 @@
+.heading {
+  text-align: center;
+  background: -webkit-linear-gradient(var(--text-normal),
+      var(--text-highlight));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 4rem;
+  margin-top: 1rem;
+  font-weight: 700;
+}
