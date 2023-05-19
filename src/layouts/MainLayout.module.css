@@ -14,7 +14,7 @@
   height: 100vh;
   background: linear-gradient(45deg, #071419, #131313);
   z-index: -10;
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   background-size: 400%;
@@ -25,7 +25,7 @@
   opacity: 0.4;
   mix-blend-mode: overlay;
   pointer-events: none;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;

@@ -1,0 +1,28 @@
+.title {
+  font-size: 1.5rem;
+}
+
+.languageContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.language {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-background);
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+}
+
+.languageIcon {
+  height: 1.5rem;
+}
+
+.languageText {
+  color: var(--text-normal);
+}
