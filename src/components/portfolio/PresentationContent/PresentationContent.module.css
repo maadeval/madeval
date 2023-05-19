@@ -68,20 +68,6 @@
   border-radius: 0 0 0 0.125rem;
 }
 
-.position {
-  text-align: center;
-  background: -webkit-linear-gradient(
-    var(--text-normal),
-    var(--text-highlight)
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 4rem;
-  margin-top: 1rem;
-  font-weight: 700;
-}
-
 .description {
   text-align: center;
   color: var(--text-highlight);
