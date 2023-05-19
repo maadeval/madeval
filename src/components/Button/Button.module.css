@@ -1,7 +1,7 @@
 .button {
   position: relative;
   padding: 0.5rem 2rem;
-  font-size: 1.125rem;
+  font-size: 1;
   outline: none;
   border-radius: 0.5rem;
   border: none;
@@ -38,7 +38,7 @@
 
 .button:hover {
   color: var(--text-normal);
-  box-shadow: 0 1rem 4rem -1.125rem var(--text-highlight);
+  box-shadow: 0 1rem 4rem -1.125rem var(--text-normal);
 }
 
 .button:focus-visible {
