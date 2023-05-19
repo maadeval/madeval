@@ -22,13 +22,15 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: linear-gradient(45deg,
-      #a8a29e,
-      #78716c,
-      #57534e,
-      #44403c,
-      #d6d3d1,
-      #a8a29e);
+  background: linear-gradient(
+    45deg,
+    #a8a29e,
+    #78716c,
+    #57534e,
+    #44403c,
+    #d6d3d1,
+    #a8a29e
+  );
   background-size: 400%;
   z-index: -1;
   border-radius: 0.5rem;
