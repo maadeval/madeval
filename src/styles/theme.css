@@ -1,5 +1,6 @@
 :root {
   --color-background: #0f1e29;
+  --color-background-ghost: rgb(15 30 41 / 50%);
   --text-normal: #f8f8f8;
   --text-highlight: #d1d1d1;
   --screen-lg: 680px;
