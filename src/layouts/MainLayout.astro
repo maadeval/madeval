@@ -1,6 +1,7 @@
 ---
 import '~styles/index.css'
 import style from './MainLayout.module.css'
+import { Analytics } from '@vercel/analytics/react'
 ---
 
 <html lang="es">
@@ -36,6 +37,7 @@ import style from './MainLayout.module.css'
     <div class={style.background}></div>
     <slot />
   </body>
+  <Analytics />
 </html>
 
 <style is:global>
