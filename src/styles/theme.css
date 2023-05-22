@@ -3,5 +3,6 @@
   --color-background-ghost: rgb(15 30 41 / 50%);
   --text-normal: #f8f8f8;
   --text-highlight: #d1d1d1;
+  --text-highlight-ghost: rgb(209 209 209 / 10%);
   --screen-lg: 680px;
 }
