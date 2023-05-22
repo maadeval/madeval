@@ -1,7 +1,6 @@
 ---
 import '~styles/index.css'
 import style from './MainLayout.module.css'
-import { Analytics } from '@vercel/analytics/react'
 ---
 
 <html lang="es">
@@ -32,12 +31,12 @@ import { Analytics } from '@vercel/analytics/react'
       fetchpriority="high"
       crossorigin
     />
+    <script defer src="/_vercel/insights/script.js"></script>
   </head>
   <body class={style.container}>
     <div class={style.background}></div>
     <slot />
   </body>
-  <Analytics />
 </html>
 
 <style is:global>
