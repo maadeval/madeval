@@ -1,0 +1,47 @@
+.container {
+  margin-top: 4rem;
+}
+
+.title {
+  font-size: 1.5rem;
+}
+
+.experienceContainer {
+  margin-bottom: 2rem;
+}
+
+.jobCompany {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  margin-top: 2rem;
+}
+
+.tag {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--text-normal);
+  background-color: var(--color-background-ghost);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.jobHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.jobRole {
+  color: var(--text-highlight);
+}
+
+.jobDate {
+  color: var(--text-highlight);
+  font-size: 0.875rem;
+}
+
+.jobNotesContainer {
+  margin-left: 1rem;
+}
