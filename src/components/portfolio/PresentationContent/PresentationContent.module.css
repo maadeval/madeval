@@ -6,6 +6,12 @@
   gap: 2rem;
 }
 
+@media (width < 768px) {
+  .container {
+    gap: 1rem;
+  }
+}
+
 .avatar {
   border-radius: 50%;
   aspect-ratio: 1;
@@ -15,15 +21,13 @@
 .avatarContainer {
   aspect-ratio: 1;
   padding: 0.25rem;
-  background: linear-gradient(
-    45deg,
-    #a8a29e,
-    #78716c,
-    #57534e,
-    #44403c,
-    #d6d3d1,
-    #a8a29e
-  );
+  background: linear-gradient(45deg,
+      #a8a29e,
+      #78716c,
+      #57534e,
+      #44403c,
+      #d6d3d1,
+      #a8a29e);
   display: inline-flex;
   background-size: 800%;
   align-items: center;
@@ -56,6 +60,12 @@
   position: relative;
 }
 
+@media (width < 768px) {
+  .name {
+    font-size: 1rem;
+  }
+}
+
 .name::before {
   content: '';
   width: 0.5rem;
@@ -73,6 +83,12 @@
   font-size: 4rem;
 }
 
+@media(width < 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+}
+
 .description {
   text-align: center;
   color: var(--text-highlight);
@@ -82,6 +98,12 @@
 
 .socialMediaContentContainer {
   margin-top: 3rem;
+}
+
+@media (width < 768px) {
+  .socialMediaContentContainer {
+    margin-top: 2rem;
+  }
 }
 
 .socialMediaDescription {
@@ -95,6 +117,12 @@
   justify-content: center;
   margin-top: 1rem;
   gap: 2rem;
+}
+
+@media (width < 768px) {
+  .socialMediaContainer {
+    flex-wrap: wrap;
+  }
 }
 
 .socialMediaIcon {

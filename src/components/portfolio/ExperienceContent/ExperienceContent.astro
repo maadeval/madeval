@@ -88,7 +88,7 @@ const DATA_EXPERIENCE_LIST = [
             <main class={style.jobNotesContainer}>
               {notes.map(({ title, descriptions }) => (
                 <>
-                  <Heading>{title}</Heading>
+                  <Heading as="h4">{title}</Heading>
                   <ToggleButtonJobDescription
                     client:idle
                     descriptions={descriptions}

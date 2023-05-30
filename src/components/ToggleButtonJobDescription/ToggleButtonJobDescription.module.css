@@ -8,8 +8,7 @@
   grid-template-rows: 0fr auto;
 }
 
-.jobDescriptionsContainer:has(.jobViewDetailInput:not(:checked))
-  .jobDescriptionsList {
+.jobDescriptionsContainer:has(.jobViewDetailInput:not(:checked)) .jobDescriptionsList {
   -webkit-mask: linear-gradient(to bottom, #000, transparent);
   mask: linear-gradient(to bottom, #000, transparent);
 }
@@ -29,12 +28,18 @@
   min-height: 4rem;
 }
 
+@media (width < 768px) {
+  .jobDescriptionsList {
+    margin-left: 0;
+  }
+}
+
 .jobDescription {
   color: var(--text-highlight);
   line-height: 1.5;
 }
 
-.jobDescription ~ .jobDescription {
+.jobDescription~.jobDescription {
   margin-top: 1rem;
 }
 
@@ -43,7 +48,7 @@
   position: absolute;
 }
 
-.jobViewDetailInput:focus-visible ~ .jobViewDetailButton {
+.jobViewDetailInput:focus-visible~.jobViewDetailButton {
   box-shadow: 0 0 0 2px #00608d, 0 0 0 4px royalblue;
 }
 
