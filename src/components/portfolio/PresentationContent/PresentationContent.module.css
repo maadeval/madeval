@@ -21,13 +21,15 @@
 .avatarContainer {
   aspect-ratio: 1;
   padding: 0.25rem;
-  background: linear-gradient(45deg,
-      #a8a29e,
-      #78716c,
-      #57534e,
-      #44403c,
-      #d6d3d1,
-      #a8a29e);
+  background: linear-gradient(
+    45deg,
+    #a8a29e,
+    #78716c,
+    #57534e,
+    #44403c,
+    #d6d3d1,
+    #a8a29e
+  );
   display: inline-flex;
   background-size: 800%;
   align-items: center;
@@ -83,7 +85,7 @@
   font-size: 4rem;
 }
 
-@media(width < 768px) {
+@media (width < 768px) {
   .title {
     font-size: 2.5rem;
   }

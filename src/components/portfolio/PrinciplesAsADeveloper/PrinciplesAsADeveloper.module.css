@@ -13,12 +13,12 @@
   line-height: 1.5;
 }
 
-.text~.text {
+.text ~ .text {
   margin-top: 1rem;
 }
 
 @media (width < 768px) {
-  .text~.text {
+  .text ~ .text {
     margin-top: 1.5rem;
   }
 }
