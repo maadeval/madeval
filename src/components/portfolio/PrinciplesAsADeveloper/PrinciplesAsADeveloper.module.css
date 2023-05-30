@@ -1,0 +1,23 @@
+.container {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.text {
+  color: var(--text-highlight);
+  line-height: 1.5;
+}
+
+.text~.text {
+  margin-top: 1rem;
+}
+
+.signature {
+  height: 4rem;
+  margin-top: 2rem;
+}
