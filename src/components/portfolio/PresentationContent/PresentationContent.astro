@@ -9,17 +9,17 @@ const SOCIAL_MEDIA = [
   {
     name: 'Linkedin',
     url: 'https://www.linkedin.com/in/maadeval/',
-    icon: 'linkedin_icon.svg',
+    icon: 'linkedin_icon.webp',
   },
   {
     name: 'Twitter',
     url: 'https://twitter.com/maadeval',
-    icon: 'twitter_icon.svg',
+    icon: 'twitter_icon.webp',
   },
   {
     name: 'GitHub',
     url: 'https://github.com/maadeval',
-    icon: 'github_icon.svg',
+    icon: 'github_icon.webp',
   },
 ]
 ---
@@ -42,7 +42,11 @@ const SOCIAL_MEDIA = [
     {
       SOCIAL_MEDIA.map(({ name, url, icon }) => (
         <a href={url} target="_blank" class={style.socialMedia}>
-          <img width={24} height={24} src={icon} alt={`Logo de ${name}`} />
+          <img
+            class={style.socialMediaIcon}
+            src={icon}
+            alt={`Logo de ${name}`}
+          />
           {name}
           <NavigateArrow height={12} />
         </a>
