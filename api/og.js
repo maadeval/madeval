@@ -21,8 +21,7 @@ export default async (req, res) => {
     },
   }
 
-  const markup = html`
-  <div
+  const markup = html`<div
   style={{
     height: '100%',
     width: '100%',
@@ -37,7 +36,6 @@ export default async (req, res) => {
       display: 'flex',
     }}
   >
-  <img width="320" height="320" src="https://madeval.dev/${tagImage}.svg"
   style={{
     position: 'absolute',
     top: '-4rem',
@@ -74,6 +72,22 @@ export default async (req, res) => {
   const svg = await satori(markup, {
     width: 1200,
     height: 630,
+    fonts: [
+      {
+        url: `${baseURL}${interRegularPath}`,
+        format: 'woff2',
+        family: 'Inter',
+        weight: 400,
+        style: 'normal',
+      },
+      {
+        url: `${baseURL}${interBoldPath}`,
+        format: 'woff2',
+        family: 'Inter',
+        weight: 700,
+        style: 'normal',
+      },
+    ],
   })
 
   const resvg = new Resvg(svg, opts)
