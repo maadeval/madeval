@@ -3,15 +3,20 @@ import satori from 'satori'
 import { html } from 'satori-html'
 
 export default async (req, res) => {
-  const baseURL = 'https://madeval.dev'
-  const interRegularPath = '/fonts/inter-regular.woff2'
-  const interBoldPath = '/fonts/inter-bold.woff2'
-
   const { title, tagImage } = req.query
 
   if (!title || !tagImage) {
     return res.status(400).json({ error: 'Missing required parameters' })
   }
+
+  const [fontExtraBold, fontRegular] = await Promise.all([
+    fetch('https://madeval.dev/fonts/inter-bold.woff2').then((res) =>
+      res.arrayBuffer()
+    ),
+    fetch('https://madeval.dev/fonts/inter-regular.woff2').then((res) =>
+      res.arrayBuffer()
+    ),
+  ])
 
   const opts = {
     background: '#171717',
@@ -69,19 +74,21 @@ export default async (req, res) => {
 </div>
   `
 
+  console.log({ markup })
+
   const svg = await satori(markup, {
     width: 1200,
     height: 630,
     fonts: [
       {
-        url: `${baseURL}${interRegularPath}`,
+        data: fontRegular,
         format: 'woff2',
         family: 'Inter',
         weight: 400,
         style: 'normal',
       },
       {
-        url: `${baseURL}${interBoldPath}`,
+        data: fontExtraBold,
         format: 'woff2',
         family: 'Inter',
         weight: 700,
@@ -90,10 +97,14 @@ export default async (req, res) => {
     ],
   })
 
+  console.log({ svg })
+
   const resvg = new Resvg(svg, opts)
 
   const pngData = resvg.render()
   const pngBuffer = pngData.asPng()
+
+  console.log('pngBuffer', { pngBuffer })
 
   res.setHeader('Content-Type', 'image/png')
   res.status(200).send(pngBuffer)

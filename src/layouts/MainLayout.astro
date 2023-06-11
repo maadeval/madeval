@@ -11,19 +11,30 @@ interface Props {
 const { frontmatter } = Astro.props
 
 const default_metadata = {
-  title: 'madeval | Programación y Desarrollo Web',
+  title: frontmatter?.title || 'madeval | Programación y Desarrollo Web',
   description:
+    frontmatter?.description ||
     'Experiencia y conocimientos en Programación y Desarrollo Web de Mateo Álvarez, madeval.',
-  keywords: 'programacion, desarrollo, javascript, typescript, react, frontend',
+  keywords:
+    frontmatter?.tags.join(', ') ||
+    'programacion, desarrollo, javascript, typescript, react, frontend',
   twitterTitle:
+    frontmatter?.title ||
     'madeval: Experiencia y conocimientos en Programación y Desarrollo Web',
   ogTitle:
+    frontmatter?.title ||
     'madeval: Experiencia y conocimientos en Programación y Desarrollo Web',
-  twitterImage: 'https://www.madeval.dev/og.webp',
-  ogImage: 'https://www.madeval.dev/og.webp',
+  twitterImage: frontmatter?.title
+    ? `https://madeval.dev/api/og?title=${frontmatter.title}&tagImage=${frontmatter.tags[0]}`
+    : 'https://www.madeval.dev/og.webp',
+  ogImage: frontmatter?.title
+    ? `https://madeval.dev/api/og?title=${frontmatter.title}&tagImage=${frontmatter.tags[0]}`
+    : 'https://www.madeval.dev/og.webp',
   twitterDescription:
+    frontmatter?.description ||
     'Curriculum y recorido profesional, conoce lo que puedo aportar a tu equipo.',
   ogDescription:
+    frontmatter?.description ||
     'Curriculum y recorido profesional, conoce lo que puedo aportar a tu equipo.',
 }
 ---
@@ -34,53 +45,28 @@ const default_metadata = {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/madeval.webp" />
-    <meta
-      name="description"
-      content={frontmatter?.description || default_metadata.description}
-    />
-    <meta
-      name="keywords"
-      content={frontmatter?.tags.join(', ') || default_metadata.keywords}
-    />
+    <meta name="description" content={default_metadata.description} />
+    <meta name="keywords" content={default_metadata.keywords} />
     <meta name="author" content="Mateo Álvarez" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@maadeval" />
     <meta name="twitter:creator" content="@maadeval" />
-    <meta
-      name="twitter:title"
-      content={frontmatter?.title || default_metadata.twitterTitle}
-    />
+    <meta name="twitter:title" content={default_metadata.twitterTitle} />
     <meta
       name="twitter:description"
-      content={frontmatter?.description || default_metadata.twitterDescription}
+      content={default_metadata.twitterDescription}
     />
-    <meta
-      name="twitter:image"
-      content={frontmatter?.title
-        ? `https://madeval.dev/api/og?title=${frontmatter?.title}&tagImage=${frontmatter?.tags}`
-        : default_metadata.twitterImage}
-    />
-    <meta
-      name="og:image"
-      content={frontmatter?.title
-        ? `https://madeval.dev/api/og?title=${frontmatter?.title}&tagImage=${frontmatter?.tags}`
-        : default_metadata.ogImage}
-    />
-    <meta
-      name="og:title"
-      content={frontmatter?.title || default_metadata.ogTitle}
-    />
-    <meta
-      name="og:description"
-      content={frontmatter?.description || default_metadata.ogDescription}
-    />
+    <meta name="twitter:image" content={default_metadata.twitterImage} />
+    <meta name="og:image" content={default_metadata.ogImage} />
+    <meta name="og:title" content={default_metadata.ogTitle} />
+    <meta name="og:description" content={default_metadata.ogDescription} />
     <meta name="og:url" content="https://madeval.dev" />
     <meta name="og:site_name" content="Madeval" />
     <meta name="og:type" content="website" />
     <meta name="og:locale" content="es_ES" />
     <meta name="robots" content="index, follow" />
     <meta name="googlebot" content="index, follow" />
-    <title>{frontmatter?.title || default_metadata.title}</title>
+    <title>{default_metadata.title}</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link
       href="/fonts/inter-regular.woff2"
