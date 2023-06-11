@@ -2,11 +2,11 @@ import { Resvg } from '@resvg/resvg-js'
 import satori from 'satori'
 import { html } from 'satori-html'
 
-const baseURL = 'https://madeval.dev'
-const interRegularPath = '/fonts/inter-regular.woff2'
-const interBoldPath = '/fonts/inter-bold.woff2'
-
 export default async (req, res) => {
+  const baseURL = 'https://madeval.dev'
+  const interRegularPath = '/fonts/inter-regular.woff2'
+  const interBoldPath = '/fonts/inter-bold.woff2'
+
   const { title, tagImage } = req.query
 
   if (!title || !tagImage) {
@@ -20,11 +20,6 @@ export default async (req, res) => {
       value: 2400,
     },
   }
-
-  const [regularInterFont, boldInterFont] = await Promise.all([
-    fetch(`${baseURL}${interRegularPath}`).then((res) => res.arrayBuffer()),
-    fetch(`${baseURL}${interBoldPath}`).then((res) => res.arrayBuffer()),
-  ])
 
   const markup = html`
   <div
@@ -79,20 +74,6 @@ export default async (req, res) => {
   const svg = await satori(markup, {
     width: 1200,
     height: 630,
-    fonts: [
-      {
-        name: 'Inter',
-        data: regularInterFont,
-        weight: 400,
-        style: 'normal',
-      },
-      {
-        name: 'Inter',
-        data: boldInterFont,
-        weight: 700,
-        style: 'normal',
-      },
-    ],
   })
 
   const resvg = new Resvg(svg, opts)
