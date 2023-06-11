@@ -56,11 +56,15 @@ const default_metadata = {
     />
     <meta
       name="twitter:image"
-      content={frontmatter?.image || default_metadata.twitterImage}
+      content={frontmatter?.title
+        ? `https://madeval.dev/api/og?title=${frontmatter?.title}&tagImage=${frontmatter?.tags}`
+        : default_metadata.twitterImage}
     />
     <meta
       name="og:image"
-      content={frontmatter?.image || default_metadata.ogImage}
+      content={frontmatter?.title
+        ? `https://madeval.dev/api/og?title=${frontmatter?.title}&tagImage=${frontmatter?.tags}`
+        : default_metadata.ogImage}
     />
     <meta
       name="og:title"
