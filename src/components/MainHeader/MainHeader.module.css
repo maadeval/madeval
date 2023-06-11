@@ -4,7 +4,7 @@
   left: 50%;
   transform: translateX(-50%);
   background-color: var(--color-background-ghost);
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   backdrop-filter: blur(0.5rem);
   width: 100%;
@@ -25,13 +25,15 @@
   cursor: pointer;
   aspect-ratio: 1;
   padding: 0.25rem;
-  background: linear-gradient(45deg,
-      #a8a29e,
-      #78716c,
-      #57534e,
-      #44403c,
-      #d6d3d1,
-      #a8a29e);
+  background: linear-gradient(
+    45deg,
+    #a8a29e,
+    #78716c,
+    #57534e,
+    #44403c,
+    #d6d3d1,
+    #a8a29e
+  );
   display: inline-flex;
   background-size: 800%;
   align-items: center;
@@ -63,12 +65,12 @@
 .navContent {
   display: flex;
   align-items: center;
-  gap: .5rem;
+  gap: 0.5rem;
 }
 
 .link {
   color: var(--text-highlight);
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   cursor: pointer;
   text-decoration: none;
