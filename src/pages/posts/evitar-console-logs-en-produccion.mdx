@@ -1,0 +1,77 @@
+---
+layout: ../../layouts/MainLayout.astro
+title: 'Evitar console.log() en producción'
+image: '/og.webp'
+author: 'madeval'
+description: 'Con eslint podemos evitar que se suban a producción todos los console.log() de nuestra aplicación! No más lógica de negocio o datos sensibles filtrados.'
+tags: ['eslint']
+---
+
+import MDXWrapper from '../../layouts/MDXWrapper.astro'
+
+<MDXWrapper frontmatter={frontmatter}>
+# Evitar console.log() en producción
+<p>{frontmatter.minutesRead}</p>
+
+Cuántas veces hemos inspeccionado la consola y hemos encontrado mensajes hardcodeados o vulnerabilidades en seguridad?
+
+![vulnerabilidad de datos en consola](/posts/evitar-console-logs-en-produccion/credentials.webp)
+
+Como desarrolladores es normal que hagamos esto! De alguna manera tenemos que debuggear.
+Pero también somos los primeros en olvidarlos y dejarlos ahí.
+
+Esto se puede considerar una mala práctica ya que estamos exponiendo datos sensibles de nuestra aplicación al usuario, o incluso la lógica de negocio e implementación.
+
+Así que, ¿cómo podemos evitar que esto pase?
+
+En eslint tenemos una regla llamada `no-console`.
+
+Esta regla considera que los `console.log()` son errores de código y nos advierte de ello.
+
+![diferencia entre console.log() con y sin la regla de no-console en eslint](/posts/evitar-console-logs-en-produccion/with-without-rule.webp)
+
+> Por supuesto, esto no significa que no podamos usarlos, sino que al momento de hacer el `build`, eslint va a bloquear el proceso y no vamos a poder continuar.
+>
+> Si aún no sabes como configurar `eslint`, puedes verlo en [este post](/posts/configurar-eslint-en-astro).
+
+Para agregar esta regla y ver el `console.log` con el error de la imagen anterior, debemos ir a nuestro archivo de configuración `.eslintrc.js` y agregar el siguiente código:
+
+```json {3} title=".eslintrc.js"
+{
+  "rules": {
+    "no-console": "error"
+  }
+}
+```
+
+Esto va a hacer que todos los métodos de `console` sean considerados errores, desde el método `log()`, el método `error()`, `warn()`, `table()`, etc.
+
+Si queremos que solo habilite el método `warn()` y `error()`, podemos hacer lo siguiente:
+
+```json {3} title=".eslintrc.js"
+{
+  "rules": {
+    "no-console": ["error", { "allow": ["error", "warn"] }]
+  }
+}
+```
+
+Ahora solo queda correr el chequeo de errores de `eslint` antes de hacer el `build` de producción!
+
+Para eso, debemos agregar un nuevo script en el `package.json`.
+
+```json {5} title="package.json"
+{
+  "scripts": {
+    "build": "vite build",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "prebuild": "npm run lint"
+  }
+}
+```
+
+Todos los comandos que empiezan con `pre` se ejecutan antes del comando que le sigue, esto significa que antes de hacer el `build` de producción, se va a ejecutar el comando `lint` que es el que corre `eslint`. Y de esta manera nos aseguramos que no se suban a producción los `console.log()`.
+
+En otras palabras, al ejecutar `npm run build`, se va a ejecutar automáticamente el script `prebuild` y si eslint reconoce errores, cancela el proceso en consola y no deja continuar.
+
+</MDXWrapper>

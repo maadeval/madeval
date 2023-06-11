@@ -4,5 +4,6 @@
   --text-normal: #f8f8f8;
   --text-highlight: #d1d1d1;
   --text-highlight-ghost: rgb(209 209 209 / 10%);
+  --text-highlight-ghost-2: rgb(209 209 209 / 5%);
   --screen-lg: 680px;
 }

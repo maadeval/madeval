@@ -1,0 +1,103 @@
+---
+import LeftLongArrow from '~components/icons/LeftLongArrow.astro'
+const { tags } = Astro.props.frontmatter
+---
+
+<main class="container">
+  <a href="/" class="return-link"><LeftLongArrow width={'1rem'} />Volver</a>
+  <img class="tagIcon" src={`/${tags}.svg`} />
+  <slot />
+</main>
+
+<style is:inline>
+  .tagIcon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    opacity: 20%;
+    mask: linear-gradient(#000, transparent);
+    -webkit-mask: linear-gradient(#000, transparent);
+  }
+
+  .container {
+    padding-top: 1rem;
+    margin-bottom: 8rem;
+    position: relative;
+  }
+
+  .return-link {
+    color: var(--text-highlight);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    text-decoration: none;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    color: var(--text-normal);
+    margin-bottom: 4rem;
+  }
+
+  code {
+    background-color: var(--text-highlight-ghost-2);
+    padding: 0.25rem 0rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+  }
+
+  pre > code {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+  }
+
+  p {
+    color: var(--text-highlight);
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  p ~ p {
+    margin-top: 1rem;
+  }
+
+  [data-rehype-pretty-code-fragment] {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  pre {
+    background-color: #282c34;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    padding: 1rem;
+    border-radius: 0 0.5rem 0.5rem 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  blockquote {
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: var(--text-highlight-ghost-2);
+  }
+
+  pre > code .highlighted {
+    background-color: var(--text-highlight-ghost);
+  }
+
+  [data-rehype-pretty-code-title] {
+    font-size: 0.875rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem 1rem;
+    border-radius: 0.25rem 0.25rem 0 0;
+    background-color: #282c34;
+    color: var(--text-highlight);
+  }
+</style>

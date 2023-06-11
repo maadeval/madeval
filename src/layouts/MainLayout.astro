@@ -1,6 +1,31 @@
 ---
 import '~styles/index.css'
 import style from './MainLayout.module.css'
+import { MdxHeader } from 'src/types/mdx.types'
+import MainHeader from '~components/MainHeader/MainHeader.astro'
+
+interface Props {
+  frontmatter?: MdxHeader
+}
+
+const { frontmatter } = Astro.props
+
+const default_metadata = {
+  title: 'madeval | Programación y Desarrollo Web',
+  description:
+    'Experiencia y conocimientos en Programación y Desarrollo Web de Mateo Álvarez, madeval.',
+  keywords: 'programacion, desarrollo, javascript, typescript, react, frontend',
+  twitterTitle:
+    'madeval: Experiencia y conocimientos en Programación y Desarrollo Web',
+  ogTitle:
+    'madeval: Experiencia y conocimientos en Programación y Desarrollo Web',
+  twitterImage: 'https://www.madeval.dev/og.webp',
+  ogImage: 'https://www.madeval.dev/og.webp',
+  twitterDescription:
+    'Curriculum y recorido profesional, conoce lo que puedo aportar a tu equipo.',
+  ogDescription:
+    'Curriculum y recorido profesional, conoce lo que puedo aportar a tu equipo.',
+}
 ---
 
 <!DOCTYPE html>
@@ -11,11 +36,11 @@ import style from './MainLayout.module.css'
     <link rel="icon" type="image/svg+xml" href="/madeval.webp" />
     <meta
       name="description"
-      content="Experiencia y conocimientos en Programación y Desarrollo Web de Mateo Álvarez, madeval."
+      content={frontmatter?.description || default_metadata.description}
     />
     <meta
       name="keywords"
-      content="programacion, desarrollo, javascript, typescript, react, frontend"
+      content={frontmatter?.tags.join(', ') || default_metadata.keywords}
     />
     <meta name="author" content="Mateo Álvarez" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -23,21 +48,27 @@ import style from './MainLayout.module.css'
     <meta name="twitter:creator" content="@maadeval" />
     <meta
       name="twitter:title"
-      content="madeval: Experiencia y conocimientos en Programación y Desarrollo Web"
+      content={frontmatter?.title || default_metadata.twitterTitle}
     />
     <meta
       name="twitter:description"
-      content="Curriculum y recorido profesional, conoce lo que puedo aportar a tu equipo."
+      content={frontmatter?.description || default_metadata.twitterDescription}
     />
-    <meta name="twitter:image" content={'https://www.madeval.dev/og.webp'} />
-    <meta name="og:image" content={'https://www.madeval.dev/og.webp'} />
+    <meta
+      name="twitter:image"
+      content={frontmatter?.image || default_metadata.twitterImage}
+    />
+    <meta
+      name="og:image"
+      content={frontmatter?.image || default_metadata.ogImage}
+    />
     <meta
       name="og:title"
-      content="madeval: Experiencia y conocimientos en Programación y Desarrollo Web"
+      content={frontmatter?.title || default_metadata.ogTitle}
     />
     <meta
       name="og:description"
-      content="Curriculum y recorido profesional, conoce lo que puedo aportar a tu equipo."
+      content={frontmatter?.description || default_metadata.ogDescription}
     />
     <meta name="og:url" content="https://madeval.dev" />
     <meta name="og:site_name" content="Madeval" />
@@ -45,7 +76,7 @@ import style from './MainLayout.module.css'
     <meta name="og:locale" content="es_ES" />
     <meta name="robots" content="index, follow" />
     <meta name="googlebot" content="index, follow" />
-    <title>madeval | Programación y Desarrollo Web</title>
+    <title>{frontmatter?.title || default_metadata.title}</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link
       href="/fonts/inter-regular.woff2"
@@ -74,6 +105,7 @@ import style from './MainLayout.module.css'
     <script defer src="/_vercel/insights/script.js"></script>
   </head>
   <body class={style.container}>
+    <MainHeader />
     <div class={style.background}></div>
     <slot />
   </body>
