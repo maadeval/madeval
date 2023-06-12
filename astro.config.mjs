@@ -1,11 +1,12 @@
 import image from '@astrojs/image' // https://astro.build/config
-import preact from '@astrojs/preact'
-import { defineConfig } from 'astro/config'
-import remarkToc from 'remark-toc'
 import mdx from '@astrojs/mdx'
-import { remarkReadingTime } from './src/lib/remark-reading-time.mjs'
+import preact from '@astrojs/preact'
+import vercel from '@astrojs/vercel/edge'
+import { defineConfig } from 'astro/config'
 import rehypePrettyCode from 'rehype-pretty-code'
-import vercel from '@astrojs/vercel/serverless'
+import remarkToc from 'remark-toc'
+import { remarkReadingTime } from './src/lib/remark-reading-time.mjs'
+
 const prettyCodeOptions = {
   theme: 'one-dark-pro',
   onVisitLine(node) {
