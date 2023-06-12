@@ -1,4 +1,3 @@
-import image from '@astrojs/image' // https://astro.build/config
 import mdx from '@astrojs/mdx'
 import preact from '@astrojs/preact'
 import vercel from '@astrojs/vercel/edge'
@@ -32,7 +31,6 @@ const prettyCodeOptions = {
 export default defineConfig({
   integrations: [
     preact(),
-    image(),
     mdx({
       syntaxHighlight: false,
       extendDefaultPlugins: true,

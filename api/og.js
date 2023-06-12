@@ -13,7 +13,7 @@ export default async (req, res) => {
     fetch('https://madeval.dev/fonts/Inter-Bold.ttf').then((res) =>
       res.arrayBuffer()
     ),
-    fetch('https://madeval.dev/fonts/Inter-Medium.ttf').then((res) =>
+    fetch('https://midufest.com/Montserrat-Regular.ttf').then((res) =>
       res.arrayBuffer()
     ),
   ])
@@ -49,7 +49,7 @@ export default async (req, res) => {
     <p
       style="
 color: #f8f8f8;
-fontSize: 24px;
+fontSize: 40px;
 marginLeft: 2rem;
 "
     >
@@ -58,7 +58,7 @@ marginLeft: 2rem;
     <article
       style="
 display: flex;
-fontSize: 60;
+fontSize: 80px;
 fontStyle: normal;
 color: #f8f8f8;
 textAlign: left;
