@@ -21,13 +21,15 @@
 .avatarContainer {
   aspect-ratio: 1;
   padding: 0.25rem;
-  background: linear-gradient(45deg,
-      #a8a29e,
-      #78716c,
-      #57534e,
-      #44403c,
-      #d6d3d1,
-      #a8a29e);
+  background: linear-gradient(
+    45deg,
+    #a8a29e,
+    #78716c,
+    #57534e,
+    #44403c,
+    #d6d3d1,
+    #a8a29e
+  );
   display: inline-flex;
   background-size: 800%;
   align-items: center;
@@ -95,8 +97,8 @@
   text-align: center;
   color: var(--text-highlight);
   margin-top: 1rem;
-  font-size: .875rem;
-  padding: .5rem 1rem;
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
   border: 1px solid var(--border-gray);
   border-radius: 1rem;
 }
@@ -153,7 +155,7 @@
   align-items: center;
   border: 1px solid var(--border-gray);
   padding: 0.5rem 1rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   transition: box-shadow 0.125s linear;
 }
 
@@ -168,7 +170,7 @@
 
 .socialMediaArrow {
   position: relative;
-  height: .5rem;
+  height: 0.5rem;
   transform: translateY(-25%);
 }
 
@@ -181,7 +183,7 @@
 .downloadCurriculum {
   text-decoration: none;
   color: var(--text-highlight);
-  padding: .125rem .235rem;
+  padding: 0.125rem 0.235rem;
   border-bottom: 1px dashed var(--border-gray);
 }
 

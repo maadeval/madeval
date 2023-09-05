@@ -5,7 +5,7 @@
   transform: translateX(-50%);
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
-  backdrop-filter: blur(.85rem);
+  backdrop-filter: blur(0.85rem);
   background-color: var(--background-ghost);
   width: 100%;
   max-width: calc(var(--screen-lg) - 2rem);
@@ -17,7 +17,7 @@
   transition: border 0.2s ease-in-out;
 }
 
-@media(width < 768px) {
+@media (width < 768px) {
   .header {
     background-color: var(--color-background);
     top: 0;
@@ -35,13 +35,15 @@
   cursor: pointer;
   aspect-ratio: 1;
   padding: 0.25rem;
-  background: linear-gradient(45deg,
-      #a8a29e,
-      #78716c,
-      #57534e,
-      #44403c,
-      #d6d3d1,
-      #a8a29e);
+  background: linear-gradient(
+    45deg,
+    #a8a29e,
+    #78716c,
+    #57534e,
+    #44403c,
+    #d6d3d1,
+    #a8a29e
+  );
   display: inline-flex;
   background-size: 800%;
   align-items: center;

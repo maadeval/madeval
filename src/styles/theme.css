@@ -1,8 +1,8 @@
 :root {
   --color-background: #fcf7f0;
-  --color-background-ghost: #F5F5F440;
-  --green-light: #CEDEBD;
-  --green-medium: #9EB384;
+  --color-background-ghost: #f5f5f440;
+  --green-light: #cedebd;
+  --green-medium: #9eb384;
   --green-dark: #435334;
   --text-normal: #262221;
   --text-highlight: #262221;
@@ -11,5 +11,4 @@
   --text-highlight-ghost-2: rgb(209 209 209 / 5%);
   --screen-lg: 680px;
   --font-vidaloka: 'Vidaloka', 'Inter', system-ui, sans-serif;
-
 }
