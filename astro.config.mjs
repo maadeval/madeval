@@ -1,5 +1,6 @@
 import mdx from '@astrojs/mdx'
 import preact from '@astrojs/preact'
+import react from '@astrojs/react'
 import vercel from '@astrojs/vercel/edge'
 import { defineConfig } from 'astro/config'
 import rehypePrettyCode from 'rehype-pretty-code'
@@ -7,7 +8,7 @@ import remarkToc from 'remark-toc'
 import { remarkReadingTime } from './src/lib/remark-reading-time.mjs'
 
 const prettyCodeOptions = {
-  theme: 'one-dark-pro',
+  theme: 'vitesse-light',
   onVisitLine(node) {
     if (node.children.length === 0) {
       node.children = [
@@ -41,6 +42,7 @@ export default defineConfig({
       },
       gfm: false,
     }),
+    react(),
   ],
   output: 'server',
   adapter: vercel(),

@@ -1,0 +1,40 @@
+---
+import style from './MainHeader.module.css'
+const { pathname: currentPath } = new URL(Astro.request.url)
+---
+
+<div id="header-observer"></div>
+<header data-element="header" class={style.header}>
+  <a href="/" class={style.avatarContainer}>
+    <img class={style.avatar} src="/madeval.webp" alt="Foto de Madeval" />
+  </a>
+  <nav class={style.navContent}>
+    <!-- <a
+      href="/about"
+      class={`${style.link} ${currentPath === '/about' ? style.active : ''}`}
+      >/me</a
+    > -->
+  </nav>
+</header>
+<script>
+  const headerObserver = document.querySelector('#header-observer')
+  const header = document.querySelector('[data-element="header"]')
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        header.classList.remove('border')
+      } else {
+        header.classList.add('border')
+      }
+    },
+    { rootMargin: '200px' }
+  )
+
+  observer.observe(headerObserver)
+</script>
+<style>
+  .border {
+    border: 1px solid var(--border-gray);
+  }
+</style>

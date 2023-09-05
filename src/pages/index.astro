@@ -1,99 +1,13 @@
 ---
-import Divider from '~components/Divider/Divider.astro'
-import PersonalPresentationCard from '~components/homepage/PersonalPresentationCard/PersonalPresentationCard.astro'
-import NavigateArrow from '~components/icons/NavigateArrow.astro'
-import { SOCIAL_MEDIA } from '~components/portfolio/PresentationContent/PresentationContent.astro'
+import HeadingPresentation from '~components/pages/homepage/HeadingPresentation/HeadingPresentation.astro'
+import PostsSection from '~components/pages/homepage/PostsSection/PostsSection.astro'
 import MainLayout from '~layouts/MainLayout.astro'
-const posts = await Astro.glob('./posts/*.mdx')
+import { MdxHeader } from '~types/mdx.types'
+
+const posts = await Astro.glob<MdxHeader>('./posts/*.mdx')
 ---
 
 <MainLayout>
-  <div>
-    <section>
-      <p class="username">@maadeval</p>
-      <p class="title">Mateo Álvarez</p>
-      <article class="social-media-container">
-        {
-          SOCIAL_MEDIA.map(({ name, url }) => (
-            <a class="social-media" href={url} target="_blank">
-              {name}
-              <NavigateArrow height={'.5rem'} />
-            </a>
-          ))
-        }
-      </article>
-    </section>
-    <Divider className="divider" />
-    <h2 class="title">Últimos posts</h2>
-    <section class="articles-box">
-      {
-        posts.map(({ frontmatter, url }) => (
-          <a class="article" href={url}>
-            <p class="article-title">{frontmatter.title}</p>
-            <p class="description">{frontmatter.description}</p>
-          </a>
-        ))
-      }
-    </section>
-  </div>
+  <HeadingPresentation />
+  <PostsSection posts={posts} />
 </MainLayout>
-
-<style is:inline>
-  .username {
-    color: var(--text-highlight);
-  }
-
-  .articles-box {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .article {
-    display: block;
-    margin-top: 0.5rem;
-    text-decoration: none;
-  }
-
-  .article-title {
-    color: var(--text-normal);
-    font-size: 1.25rem;
-    margin-bottom: 0.25rem;
-  }
-
-  .title {
-    font-size: 2rem;
-    font-weight: bold;
-    margin: 0;
-    color: var(--text-highlight);
-  }
-  .social-media-title {
-    color: var(--text-highlight);
-    margin-top: 1rem;
-  }
-
-  .social-media-container {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 0.25rem;
-  }
-
-  .social-media {
-    color: var(--text-highlight);
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-  }
-
-  .divider {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-  }
-
-  .description {
-    text-decoration: none;
-    color: var(--text-highlight);
-    opacity: 0.75;
-  }
-</style>

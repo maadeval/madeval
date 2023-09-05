@@ -1,42 +1,17 @@
 ---
+import MainHeader from '~components/shared/MainHeader/MainHeader.astro'
+import Footer from '~components/shared/Footer/Footer.astro'
+import { MdxHeader } from '~types/mdx.types'
+import { generateMetadata } from '~utils/metadata'
+
 import '~styles/index.css'
-import style from './MainLayout.module.css'
-import { MdxHeader } from 'src/types/mdx.types'
-import MainHeader from '~components/MainHeader/MainHeader.astro'
 
 interface Props {
   frontmatter?: MdxHeader
 }
 
 const { frontmatter } = Astro.props
-
-const default_metadata = {
-  title: frontmatter?.title || 'madeval | Programación y Desarrollo Web',
-  description:
-    frontmatter?.description ||
-    'Experiencia y conocimientos en Programación y Desarrollo Web de Mateo Álvarez, madeval.',
-  keywords:
-    frontmatter?.tags.join(', ') ||
-    'programacion, desarrollo, javascript, typescript, react, frontend',
-  twitterTitle:
-    frontmatter?.title ||
-    'madeval: Experiencia y conocimientos en Programación y Desarrollo Web',
-  ogTitle:
-    frontmatter?.title ||
-    'madeval: Experiencia y conocimientos en Programación y Desarrollo Web',
-  twitterImage: frontmatter?.title
-    ? `https://madeval.dev/api/og?title=${frontmatter.title}&tagImage=${frontmatter.tags[0]}`
-    : 'https://www.madeval.dev/og.webp',
-  ogImage: frontmatter?.title
-    ? `https://madeval.dev/api/og?title=${frontmatter.title}&tagImage=${frontmatter.tags[0]}`
-    : 'https://www.madeval.dev/og.webp',
-  twitterDescription:
-    frontmatter?.description ||
-    'Curriculum y recorido profesional, conoce lo que puedo aportar a tu equipo.',
-  ogDescription:
-    frontmatter?.description ||
-    'Curriculum y recorido profesional, conoce lo que puedo aportar a tu equipo.',
-}
+const metadata = generateMetadata({ input: frontmatter })
 ---
 
 <!DOCTYPE html>
@@ -45,29 +20,34 @@ const default_metadata = {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/madeval.webp" />
-    <meta name="description" content={default_metadata.description} />
-    <meta name="keywords" content={default_metadata.keywords} />
+    <meta name="description" content={metadata.description} />
+    <meta name="keywords" content={metadata.keywords} />
     <meta name="author" content="Mateo Álvarez" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@maadeval" />
     <meta name="twitter:creator" content="@maadeval" />
-    <meta name="twitter:title" content={default_metadata.twitterTitle} />
-    <meta
-      name="twitter:description"
-      content={default_metadata.twitterDescription}
-    />
-    <meta name="twitter:image" content={default_metadata.twitterImage} />
-    <meta name="og:image" content={default_metadata.ogImage} />
-    <meta name="og:title" content={default_metadata.ogTitle} />
-    <meta name="og:description" content={default_metadata.ogDescription} />
+    <meta name="twitter:title" content={metadata.twitterTitle} />
+    <meta name="twitter:description" content={metadata.twitterDescription} />
+    <meta name="twitter:image" content={metadata.twitterImage} />
+    <meta name="og:image" content={metadata.ogImage} />
+    <meta name="og:title" content={metadata.ogTitle} />
+    <meta name="og:description" content={metadata.ogDescription} />
     <meta name="og:url" content="https://madeval.dev" />
     <meta name="og:site_name" content="Madeval" />
     <meta name="og:type" content="website" />
     <meta name="og:locale" content="es_ES" />
     <meta name="robots" content="index, follow" />
     <meta name="googlebot" content="index, follow" />
-    <title>{default_metadata.title}</title>
+    <title>{metadata.title}</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link
+      href="/fonts/vidaloka-regular.woff2"
+      rel="preload"
+      type="font/woff2"
+      as="font"
+      fetchpriority="high"
+      crossorigin
+    />
     <link
       href="/fonts/inter-regular.woff2"
       rel="preload"
@@ -94,12 +74,26 @@ const default_metadata = {
     />
     <script defer src="/_vercel/insights/script.js"></script>
   </head>
-  <body class={style.container}>
-    <MainHeader />
-    <div class={style.background}></div>
-    <slot />
+  <body>
+    <main class="container">
+      <MainHeader />
+      <slot />
+    </main>
+    <Footer />
   </body>
 </html>
+
+<style>
+  .container {
+    width: 100%;
+    min-height: 100vh;
+    max-width: var(--screen-lg);
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 8rem;
+  }
+</style>
 
 <style is:global>
   html {

@@ -22,6 +22,14 @@
   src: url('/fonts/inter-bold.woff2') format('woff2');
 }
 
+@font-face {
+  font-family: 'Vidaloka';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/vidaloka-regular.woff2') format('woff2');
+}
+
 @layer base {
   html {
     font-family: 'Inter', system-ui, sans-serif;

@@ -1,9 +1,15 @@
 :root {
-  --color-background: #0f1e29;
-  --color-background-ghost: rgb(15 30 41 / 50%);
-  --text-normal: #f8f8f8;
-  --text-highlight: #d1d1d1;
+  --color-background: #fcf7f0;
+  --color-background-ghost: #F5F5F440;
+  --green-light: #CEDEBD;
+  --green-medium: #9EB384;
+  --green-dark: #435334;
+  --text-normal: #262221;
+  --text-highlight: #262221;
+  --border-gray: #808080;
   --text-highlight-ghost: rgb(209 209 209 / 10%);
   --text-highlight-ghost-2: rgb(209 209 209 / 5%);
   --screen-lg: 680px;
+  --font-vidaloka: 'Vidaloka', 'Inter', system-ui, sans-serif;
+
 }

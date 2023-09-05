@@ -1,0 +1,25 @@
+---
+import { SOCIAL_MEDIA } from '~utils/social-media'
+import style from './Footer.module.css'
+import Signature from '~components/icons/Signature.astro'
+import NavigateArrow from '~components/icons/NavigateArrow.astro'
+---
+
+<footer class={style.footer}>
+  <section class={style.footerContainer}>
+    <nav class={style.socialContainer}>
+      {
+        SOCIAL_MEDIA.map(({ name, url, icon }) => (
+          <a class={style.socialMediaLink} href={url} target="_blank">
+            <img class={style.socialMediaIcon} src={`/${icon}`} alt={name} />
+            {name}
+            <NavigateArrow class={style.socialMediaArrowLink} />
+          </a>
+        ))
+      }
+    </nav>
+    <picture class={style.signatureContainer}>
+      <Signature class={style.signature} />
+    </picture>
+  </section>
+</footer>

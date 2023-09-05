@@ -1,0 +1,56 @@
+---
+import Heading from '~components/shared/Heading/Heading.astro'
+import style from './LanguageProgrammingContent.module.css'
+import JavaScriptIcon from '~components/icons/JavaScriptIcon.astro'
+import TypeScriptIcon from '~components/icons/TypeScriptIcon.astro'
+import ReactIcon from '~components/icons/ReactIcon.astro'
+import NextjsIcon from '~components/icons/NextjsIcon.astro'
+import GitIcon from '~components/icons/GitIcon.astro'
+import FigmaIcon from '~components/icons/Figma.astro'
+import VitestIcon from '~components/icons/VitestIcon.astro'
+
+const LANGUAGES = [
+  {
+    name: 'JavaScript',
+    icon: JavaScriptIcon,
+  },
+  {
+    name: 'TypeScript',
+    icon: TypeScriptIcon,
+  },
+  {
+    name: 'React',
+    icon: ReactIcon,
+  },
+  {
+    name: 'NextJS',
+    icon: NextjsIcon,
+  },
+  {
+    name: 'Git',
+    icon: GitIcon,
+  },
+  {
+    name: 'Figma',
+    icon: FigmaIcon,
+  },
+  {
+    name: 'Testing en frontend',
+    icon: VitestIcon,
+  },
+]
+---
+
+<section>
+  <Heading class={style.title} as={'h3'}>Tecnologías</Heading>
+  <article class={style.languageContainer}>
+    {
+      LANGUAGES.map(({ name, icon: Icon }) => (
+        <div class={style.language}>
+          <Icon class={style.languageIcon} />
+          <span class={style.languageText}>{name}</span>
+        </div>
+      ))
+    }
+  </article>
+</section>

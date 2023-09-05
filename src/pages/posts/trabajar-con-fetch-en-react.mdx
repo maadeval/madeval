@@ -1,0 +1,29 @@
+---
+layout: ../../layouts/MainLayout.astro
+title: 'Trabajar con fetch en React'
+image: '/og.webp'
+author: 'madeval'
+description: 'Con eslint podemos evitar que se suban a producción todos los console.log() de nuestra aplicación! No más lógica de negocio o datos sensibles filtrados.'
+tags: ['react']
+---
+
+import MDXWrapper from '../../layouts/MDXWrapper.astro'
+
+<MDXWrapper frontmatter={frontmatter}>
+# {frontmatter.title}
+
+<p>{frontmatter.minutesRead}</p>
+
+Holis! 👋 Hoy toca hablar de nuestro amigo y compañero de todos los días... el fetch!
+
+Hagamos esta pregunta, hacer esto es correcto?
+
+```jsx
+useEffect(() => {
+  fetch('https://api.github.com/users/madeval')
+    .then((res) => res.json())
+    .then((data) => console.log(data))
+}, [])
+```
+
+</MDXWrapper>

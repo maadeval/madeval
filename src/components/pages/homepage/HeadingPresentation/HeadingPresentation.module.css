@@ -1,0 +1,190 @@
+.container {
+  padding-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+@media (width < 768px) {
+  .container {
+    gap: 1rem;
+  }
+}
+
+.avatar {
+  border-radius: 50%;
+  aspect-ratio: 1;
+  width: 3rem;
+}
+
+.avatarContainer {
+  aspect-ratio: 1;
+  padding: 0.25rem;
+  background: linear-gradient(45deg,
+      #a8a29e,
+      #78716c,
+      #57534e,
+      #44403c,
+      #d6d3d1,
+      #a8a29e);
+  display: inline-flex;
+  background-size: 800%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0.25rem #a8a29e20;
+  animation: growing 20s linear infinite;
+}
+
+@keyframes growing {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  50% {
+    background-position: 100% 0;
+  }
+
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.name {
+  font-size: 1.125rem;
+  color: var(--color-background);
+  background-color: var(--text-normal);
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  position: relative;
+}
+
+@media (width < 768px) {
+  .name {
+    font-size: 1rem;
+  }
+}
+
+.name::before {
+  content: '';
+  width: 0.5rem;
+  aspect-ratio: 1;
+  background-color: var(--text-normal);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  left: -0.25rem;
+  border-radius: 0 0 0 0.125rem;
+}
+
+.title {
+  text-align: center;
+  font-size: 5rem;
+  font-family: var(--font-vidaloka);
+}
+
+@media (width < 768px) {
+  .title {
+    font-size: 2.8rem;
+  }
+}
+
+.description {
+  display: inline-block;
+  text-align: center;
+  color: var(--text-highlight);
+  margin-top: 1rem;
+  font-size: .875rem;
+  padding: .5rem 1rem;
+  border: 1px solid var(--border-gray);
+  border-radius: 1rem;
+}
+
+.mainTitleContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.socialMediaContentContainer {
+  margin-top: 3rem;
+}
+
+@media (width < 768px) {
+  .socialMediaContentContainer {
+    margin-top: 2rem;
+  }
+}
+
+.socialMediaDescription {
+  text-align: center;
+  color: var(--text-highlight);
+  font-size: 1rem;
+}
+
+.socialMediaContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+@media (width < 768px) {
+  .socialMediaContainer {
+    flex-wrap: wrap;
+  }
+}
+
+.socialMediaIcon {
+  width: 1.5rem;
+  aspect-ratio: 1;
+}
+
+.socialMedia {
+  gap: 0.5rem;
+  color: var(--text-highlight);
+  text-decoration: none;
+  font-size: 1.125rem;
+  outline: none;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--border-gray);
+  padding: 0.5rem 1rem;
+  border-radius: .5rem;
+  transition: box-shadow 0.125s linear;
+}
+
+.socialMedia:focus-visible {
+  box-shadow: 0 0 0 2px var(--green-medium), 0 0 0 4px var(--green-dark);
+}
+
+.socialMedia:hover {
+  background-color: var(--green-light);
+  box-shadow: 0 0 0 1px var(--green-medium);
+}
+
+.socialMediaArrow {
+  position: relative;
+  height: .5rem;
+  transform: translateY(-25%);
+}
+
+.curriculumButtonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.downloadCurriculum {
+  text-decoration: none;
+  color: var(--text-highlight);
+  padding: .125rem .235rem;
+  border-bottom: 1px dashed var(--border-gray);
+}
+
+.divider {
+  margin: 4rem 0;
+}

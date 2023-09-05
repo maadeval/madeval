@@ -1,0 +1,25 @@
+---
+import { PostsList } from '~components/pages/homepage/PostsList/PostsList'
+const { posts } = Astro.props
+---
+
+<h2 class="title">Últimos posts</h2>
+<PostsList client:load posts={posts} />
+
+<style>
+  .title {
+    font-size: 3rem;
+    text-align: center;
+    font-weight: bold;
+    margin: 0;
+    color: var(--text-highlight);
+    font-family: var(--font-vidaloka);
+  }
+
+  @media (width < 768px) {
+    .title {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+  }
+</style>

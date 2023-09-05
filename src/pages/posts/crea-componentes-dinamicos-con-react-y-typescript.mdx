@@ -1,0 +1,70 @@
+---
+layout: ../../layouts/MainLayout.astro
+title: 'Componentes Polimórficos con TypeScript y React'
+image: '/og.webp'
+author: 'madeval'
+description: 'Con TypeScript podemos renderizar cualquier tipo de componente con tags dinámicos tal como lo hace Chakra UI. Veamos cómo lo hacen!'
+tags: ['react']
+---
+
+import MDXWrapper from '../../layouts/MDXWrapper.astro'
+import { LiveCode } from '../../components/pages/mdx/LiveCode/LiveCode.jsx'
+
+<MDXWrapper frontmatter={frontmatter}>
+
+# {frontmatter.title}
+
+<p>{frontmatter.minutesRead}</p>
+
+Librerias de componentes como [Chakra UI](https://chakra-ui.com/) utilizan en muchos de sus componentes una propiedad llamada `as` que permite renderizar componentes con un tag HTML distinto al que tiene por defecto.
+
+Por ejemplo, el componente `Button` de Chakra UI tiene por defecto un tag `button`, pero si le pasamos la propiedad `as={"a"}` entonces se renderizará de esa manera.
+
+```jsx title="App.jsx"
+const Button = (props) => <button {...props}>Guardar cambios</button>
+
+// 👉 se renderiza en el DOM como: <button>Guardar cambios</button>
+
+const Button = (props) => (
+  <button as="a" {...props}>
+    Guardar cambios
+  </button>
+)
+
+// 👉 se renderiza en el DOM como: <a>Guardar cambios</a>
+```
+
+Esto suele ser muy util para componentes como `Text` y `Heading`, en el que podemos renderizar un `h1`, `h2`, `h3`, etc. dependiendo del valor que le pasemos.
+
+```jsx title="App.jsx"
+const Heading = (props) => <h1 {...props}>Título</h1>
+
+// 👉 se renderiza en el DOM como: <h1>Título</h1>
+
+const Heading = (props) => (
+  <h1 as="h2" {...props}>
+    Título
+  </h1>
+)
+
+// 👉 se renderiza en el DOM como: <h2>Título</h2>
+```
+
+Ahora bien, esto no solo queda aqui! No todas las etiquetas HTML comparten los mismos atributos, por ejemplo, un `button` tiene el atributo `type` pero un `a` no, por otra parte un `a` tiene el atributo `href` pero un `button` no.
+
+Seria interesante cambiar los atributos que permite un componente en base al tag que le pasemos.
+
+Aqui tenemos el resultado (puedes probar cambiando el tag y viendo que atributos tiene disponible):
+
+<LiveCode client:load />
+
+> Si tienes pensado crear una libreria de componentes para tu empresa, usar esta tecnica puede brindar una muy buena experiencia de desarrollo y control en el SEO.
+> Dando flexibilidad a los desarrolladores y permitiendo que utilicen tus componentes sin limitar todas las posibilidades que ofrece HTML con sus atributos.
+
+## Creamos el componente Button
+
+Empezaremos sin TypeScript y de a poco iremos agregando tipos para que puedas ver la diferencia y que nos aporta.
+
+<LiveCode client:load />
+
+</MDXWrapper>

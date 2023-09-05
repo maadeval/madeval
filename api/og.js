@@ -13,7 +13,7 @@ export default async (req, res) => {
     fetch('https://madeval.dev/fonts/Inter-Bold.ttf').then((res) =>
       res.arrayBuffer()
     ),
-    fetch('https://midufest.com/Montserrat-Regular.ttf').then((res) =>
+    fetch('https://madeval.dev/fonts/Inter-Medium.ttf').then((res) =>
       res.arrayBuffer()
     ),
   ])
@@ -32,7 +32,7 @@ export default async (req, res) => {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background-color: #0f1e29;"
+    background-color: #0a1e29;"
   >
     <img
       width="420"
@@ -69,8 +69,6 @@ whiteSpace: pre-wrap;
       <b>${title}</b>
     </article>
   </div> `
-
-  console.log(markup.props.style)
 
   const svg = await satori(markup, {
     width: 1200,

@@ -1,0 +1,51 @@
+---
+import NavigateArrow from '~components/icons/NavigateArrow.astro'
+import Divider from '~components/shared/Divider/Divider.astro'
+import Heading from '~components/shared/Heading/Heading.astro'
+
+import { SOCIAL_MEDIA } from '~utils/social-media'
+
+import style from './HeadingPresentation.module.css'
+---
+
+<section class={style.container}>
+  <picture class={style.avatarContainer}>
+    <img class={style.avatar} src="/madeval.webp" alt="Avatar de madeval" />
+  </picture>
+  <p class={style.name}>Mateo Álvarez</p>
+</section>
+<section class={style.mainTitleContent}>
+  <Heading as="h1" class={style.title}>Senior Frontend Developer</Heading>
+  <p class={style.description}>
+    +3 años de experiencia desarrollando páginas web.
+  </p>
+</section>
+<section class={style.socialMediaContentContainer}>
+  <p class={style.socialMediaDescription}>
+    👇 Accede a mi trabajo y perfil en todas estas redes.
+  </p>
+  <nav class={style.socialMediaContainer}>
+    {
+      SOCIAL_MEDIA.map(({ name, url, icon }) => (
+        <a href={url} target="_blank" class={style.socialMedia}>
+          <img
+            class={style.socialMediaIcon}
+            src={icon}
+            alt={`Logo de ${name}`}
+          />
+          {name}
+          <NavigateArrow class={style.socialMediaArrow} />
+        </a>
+      ))
+    }
+  </nav>
+  <div class={style.curriculumButtonContainer}>
+    <a
+      class={style.downloadCurriculum}
+      href="#"
+      target="_blank"
+      download="/Frontend_Developer_Mateo_Alvarez.pdf">Descargar Curriculum</a
+    >
+  </div>
+</section>
+<Divider className={style.divider} />

@@ -1,0 +1,57 @@
+.footer {
+  border-top: 1px solid var(--border-gray);
+  margin-top: 4rem;
+  padding: 2rem 1rem 6rem;
+  display: flex;
+  justify-content: center;
+}
+
+.footerContainer {
+  max-width: var(--screen-lg);
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+}
+
+.socialContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.signatureContainer {
+  color: var(--text-normal);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
+
+.signature {
+  width: 2rem;
+}
+
+.socialMediaLink {
+  display: inline-flex;
+  align-items: center;
+  gap: .25rem;
+  color: var(--text-normal);
+  text-decoration: none;
+}
+
+.socialMediaLink:hover {
+  text-decoration: underline;
+}
+
+.socialMediaIcon {
+  width: 1rem;
+  aspect-ratio: 1;
+}
+
+.socialMediaArrowLink {
+  height: .25rem;
+  position: relative;
+  top: -.25rem;
+}

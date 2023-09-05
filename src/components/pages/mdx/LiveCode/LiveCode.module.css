@@ -1,0 +1,4 @@
+.layout {
+  flex-direction: column;
+  min-height: 600px;
+}

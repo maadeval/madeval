@@ -1,0 +1,9 @@
+---
+import { HTMLTag, Polymorphic } from 'astro/types'
+import style from './Heading.module.css'
+
+type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag }>
+const { as: Tag = 'h1', className, ...props } = Astro.props
+---
+
+<Tag class={`${style.heading} ${className ?? ''}`} {...props}><slot /></Tag>
